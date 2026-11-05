@@ -1,20 +1,18 @@
-/* Yurdanur Köse Mimarlık & İnşaat - Endüstriyel & Akaryakıt Taahhüt Tasarım Sistemi */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+/* Yurdanur Köse Mimarlık & İnşaat - Kurumsal Prestij & Endüstriyel Mimari Tasarım Sistemi */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-primary: #1A1D20;
-  --bg-card: #24282D;
-  --bg-card-hover: #2D3238;
-  --accent-amber: #D97706;
-  --accent-amber-glow: rgba(217, 119, 6, 0.25);
+  --bg-primary: #14171A;
+  --bg-card: #1E2227;
+  --bg-card-hover: #262B32;
+  --accent-amber: #F59E0B;
+  --accent-amber-dark: #D97706;
+  --accent-amber-glow: rgba(245, 158, 11, 0.25);
   --accent-blue: #0284C7;
   --accent-blue-light: #38BDF8;
-  --accent-blue-glow: rgba(2, 132, 199, 0.25);
-  --surface-light: #F8FAFC;
   --text-white: #FFFFFF;
-  --text-muted: #94A3B8;
-  --border-dark: #33383F;
-  --border-blueprint: rgba(2, 132, 199, 0.35);
+  --text-slate: #94A3B8;
+  --border-dark: #2A3038;
 }
 
 * {
@@ -25,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-white);
 }
@@ -36,75 +34,32 @@ body {
   line-height: 1.6;
 }
 
-/* Headings with Space Grotesk */
+/* Headings with Outfit - Prestigious, Modern, Architectural */
 h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', sans-serif;
   letter-spacing: -0.02em;
 }
 
-/* Monospace for metrics & blueprints */
-.font-mono, .metric-val, .tech-badge, .blueprint-tag {
-  font-family: 'JetBrains Mono', monospace;
+/* Standard Clean Sans for UI & Badges */
+.font-sans, .tech-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Blueprint Grid Background Pattern */
-.bg-blueprint-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(2, 132, 199, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(2, 132, 199, 0.07) 1px, transparent 1px);
-}
-
-.bg-dot-matrix {
-  background-size: 24px 24px;
-  background-image: radial-gradient(rgba(148, 163, 184, 0.12) 1.5px, transparent 0);
-}
-
-/* Technical Corner Markers for Cards */
-.tech-card {
+/* Clean Cards with Subtle Elevation */
+.prestige-card {
   position: relative;
   background-color: var(--bg-card);
   border: 1px solid var(--border-dark);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tech-card::before, .tech-card::after {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  transition: all 0.3s ease;
-  pointer-events: none;
+.prestige-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
 }
 
-.tech-card::before {
-  top: -1px;
-  left: -1px;
-  border-top: 2px solid var(--accent-blue);
-  border-left: 2px solid var(--accent-blue);
-}
-
-.tech-card::after {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 2px solid var(--accent-blue);
-  border-right: 2px solid var(--accent-blue);
-}
-
-.tech-card:hover {
-  border-color: var(--accent-blue);
-  box-shadow: 0 10px 30px -10px var(--accent-blue-glow);
-  transform: translateY(-3px);
-}
-
-.tech-card:hover::before,
-.tech-card:hover::after {
-  width: 14px;
-  height: 14px;
-  border-color: var(--accent-amber);
-}
-
-/* Blueprint Hover for Project Cards */
+/* Project Card Hover */
 .project-card {
   position: relative;
   background: var(--bg-card);
@@ -114,108 +69,96 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .project-card .img-zoom {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover .img-zoom {
-  transform: scale(1.06);
-}
-
-.project-card .blueprint-overlay {
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  background: linear-gradient(180deg, rgba(2, 132, 199, 0.15) 0%, rgba(26, 29, 32, 0.95) 100%);
-}
-
-.project-card:hover .blueprint-overlay {
-  opacity: 1;
+  transform: scale(1.08);
 }
 
 .project-card:hover {
-  border-color: var(--accent-blue-light);
-  box-shadow: 0 0 25px rgba(2, 132, 199, 0.2);
-}
-
-/* Engineering Crosshair */
-.crosshair {
-  position: relative;
-}
-.crosshair::before {
-  content: '+';
-  position: absolute;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  color: var(--accent-blue);
-  top: 6px;
-  left: 6px;
-  line-height: 1;
-  opacity: 0.7;
+  border-color: var(--accent-amber);
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.25);
 }
 
 /* Amber Glowing Button */
 .btn-amber {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
   color: #FFFFFF;
   font-weight: 600;
-  letter-spacing: 0.02em;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px var(--accent-amber-glow);
+  box-shadow: 0 4px 16px var(--accent-amber-glow);
 }
 
 .btn-amber:hover {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
 }
 
-/* Technical Blue Outline Button */
-.btn-blueprint {
-  background: rgba(2, 132, 199, 0.1);
-  border: 1px solid var(--accent-blue);
+/* Corporate Outline Button */
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
   font-weight: 600;
   transition: all 0.25s ease;
 }
 
-.btn-blueprint:hover {
-  background: var(--accent-blue);
-  color: #FFFFFF;
-  box-shadow: 0 4px 16px var(--accent-blue-glow);
-  transform: translateY(-1px);
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
 
-/* Hero Canvas & Video Overlay */
-.hero-overlay {
-  background: radial-gradient(circle at 60% 40%, rgba(2, 132, 199, 0.18) 0%, rgba(26, 29, 32, 0.85) 60%, rgba(26, 29, 32, 0.98) 100%);
+/* Hero Gradient Overlay */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(20, 23, 26, 0.85) 0%, rgba(20, 23, 26, 0.6) 50%, rgba(20, 23, 26, 0.98) 100%);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: #33383F;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-blue);
+/* Clean White Form Styling */
+.white-form-card {
+  background: #FFFFFF;
+  color: #1E293B;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(226, 232, 240, 0.8);
 }
 
-/* Form Wizard Active Step Indicator */
-.step-item.active .step-number {
-  background-color: var(--accent-amber);
-  color: #FFFFFF;
-  border-color: var(--accent-amber);
-  box-shadow: 0 0 12px var(--accent-amber-glow);
+.form-select-pill {
+  border: 1.5px solid #E2E8F0;
+  background: #F8FAFC;
+  color: #334155;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.step-item.completed .step-number {
-  background-color: var(--accent-blue);
-  color: #FFFFFF;
-  border-color: var(--accent-blue);
+.form-select-pill:hover {
+  border-color: #CBD5E1;
+  background: #F1F5F9;
+}
+
+.form-select-pill.active {
+  border-color: #D97706;
+  background: #FEF3C7;
+  color: #92400E;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
+}
+
+.form-input-clean {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  color: #0F172A;
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.form-input-clean:focus {
+  outline: none;
+  background: #FFFFFF;
+  border-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
 }
 
 /* Modal Transitions */
@@ -230,9 +173,24 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .modal-content-box {
-  transform: scale(0.95) translateY(15px);
+  transform: scale(0.96) translateY(12px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .modal-backdrop.open .modal-content-box {
   transform: scale(1) translateY(0);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #2D3748;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-amber);
 }

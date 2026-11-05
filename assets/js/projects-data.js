@@ -1,30 +1,30 @@
-// Yurdanur Köse Mimarlık & İnşaat - Proje Veri Şeması (Project Interface)
-// EPDK & İSG Standartlarında Ağır Sanayi ve Akaryakıt Portföyü
+// Yurdanur Köse Mimarlık & İnşaat - Proje Veri Şeması
+// Firma Orijinal OSB Projeleri ve Akaryakıt Taahhüt Portföyü
 
 const PROJECTS_DATA = [
   {
     id: "proj-1",
-    title: "Balıkesir OSB Plastik Enjeksiyon Fabrikası",
-    slug: "balikesir-osb-plastik-enjeksiyon",
+    title: "Balıkesir OSB Ağır Sanayi & Fabrika Tesisi",
+    slug: "balikesir-osb-agir-sanayi-tesisi",
     category: "endustriyel",
     categoryLabel: "OSB Fabrika",
     status: "tamamlandi",
     statusLabel: "Tamamlandı",
     location: "Balıkesir OSB / Karesi",
-    areaSquareMeters: 8500,
-    structureType: "Ağır Çelik",
-    deliveryTimeMonths: 7,
-    clientOrBrand: "Polimer Endüstri A.Ş.",
-    coverImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop",
+    areaSquareMeters: 14500,
+    structureType: "Ağır Çelik & Prefabrik",
+    deliveryTimeMonths: 8,
+    clientOrBrand: "Sanayi Yatırımı",
+    coverImage: "assets/images/osb-1.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541888946425-d0fbb1861563?q=80&w=1200&auto=format&fit=crop"
+      "assets/images/osb-1.jpg",
+      "assets/images/osb-2.jpg",
+      "assets/images/osb-3.jpg"
     ],
-    scopeSummary: "Ağır çelik konstrüksiyon imalatı, 10 tonluk çift kiriş gezer köprülü vinç yolları, 5.000 kg/m² yüzey sertleştiricili endüstriyel zemin betonu ve modern idari ofis bloğu.",
+    scopeSummary: "Ağır çelik konstrüksiyon imalatı, çift kiriş tavan vinç yolları, yüksek mukavemetli endüstriyel saha betonu ve modern idari yönetim binası.",
     technicalSpecs: {
-      craneCapacityTon: 10,
-      floorLoadCapacityKgM2: 5000,
+      craneCapacityTon: 15,
+      floorLoadCapacityKgM2: 6000,
       substationKva: 1600,
       canopyHeightMeters: null
     }
@@ -32,98 +32,97 @@ const PROJECTS_DATA = [
   {
     id: "proj-2",
     title: "Petrol Ofisi Akaryakıt & Dinlenme İstasyonu",
-    slug: "petrol-ofisi-balikesir-cevre-yolu",
+    slug: "petrol-ofisi-akaryakit-dinlenme-istasyonu",
     category: "akaryakit",
-    categoryLabel: "Petrol Ofisi İstasyon",
+    categoryLabel: "Akaryakıt İstasyonu",
     status: "tamamlandi",
     statusLabel: "Tamamlandı",
-    location: "Balıkesir Çevre Yolu / Karesi",
-    areaSquareMeters: 4800,
-    structureType: "Çelik Kanopi & Kompozit İdari Tesis",
+    location: "Balıkesir - Bursa Çevre Yolu / Karesi",
+    areaSquareMeters: 5200,
+    structureType: "Çelik Kanopi & Kompozit Tesis",
     deliveryTimeMonths: 5,
-    clientOrBrand: "Petrol Ofisi Kurumsal Bayiliği",
+    clientOrBrand: "Petrol Ofisi Standartları",
     coverImage: "https://images.unsplash.com/photo-1527018606416-a674e140cca3?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1527018606416-a674e140cca3?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1200&auto=format&fit=crop"
     ],
-    scopeSummary: "EPDK standartlarına tam uyumlu 6 adalılık çelik kanopi montajı, ATEX sertifikalı ex-proof elektrik altyapısı, 4 adet çift cidarlı yer altı yakıt tankı, 7/24 market ve oto yıkama ünitesi.",
+    scopeSummary: "EPDK mevzuatına tam uyumlu 6 adalılık çelik kanopi imalatı, ATEX sertifikalı ex-proof elektrik altyapısı, çift cidarlı yer altı tankları ve 7/24 market & oto yıkama.",
     technicalSpecs: {
       craneCapacityTon: null,
       floorLoadCapacityKgM2: 8000,
       substationKva: 400,
-      canopyHeightMeters: 5.4
+      canopyHeightMeters: 5.5
     }
   },
   {
     id: "proj-3",
-    title: "Bandırma OSB Lojistik Depo & Antrepo Tesisi",
-    slug: "bandirma-osb-lojistik-antrepo",
-    category: "lojistik",
-    categoryLabel: "Lojistik Depo",
+    title: "Balıkesir OSB Üretim & Enjeksiyon Tesisi",
+    slug: "balikesir-osb-uretim-tesisi",
+    category: "endustriyel",
+    categoryLabel: "OSB Fabrika",
     status: "tamamlandi",
     statusLabel: "Tamamlandı",
-    location: "Bandırma OSB / Balıkesir",
-    areaSquareMeters: 14200,
-    structureType: "Prefabrik Betonarme + Çelik Makas",
-    deliveryTimeMonths: 8,
-    clientOrBrand: "Ege Global Lojistik Depoculuk",
-    coverImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+    location: "Balıkesir OSB 1. Etap",
+    areaSquareMeters: 9200,
+    structureType: "Ağır Çelik Karkas",
+    deliveryTimeMonths: 7,
+    clientOrBrand: "Özel Sanayici",
+    coverImage: "assets/images/osb-2.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200&auto=format&fit=crop"
+      "assets/images/osb-2.jpg",
+      "assets/images/osb-4.jpg"
     ],
-    scopeSummary: "12 adet hidrolik yükleme rampası, FM Global ve yangın yönetmeliğine uygun sprinkler söndürme ağı, 12.5 metre serbest tavan yüksekliği ve yüksek mukavemetli zemin.",
+    scopeSummary: "Geniş açıklıklı çelik makas sistemi, sandviç panel cephe giydirme, yangın sprinkler sistemi ve entegre ar-ge ofisleri.",
     technicalSpecs: {
-      craneCapacityTon: 15,
-      floorLoadCapacityKgM2: 7000,
+      craneCapacityTon: 10,
+      floorLoadCapacityKgM2: 5000,
       substationKva: 1250,
       canopyHeightMeters: null
     }
   },
   {
     id: "proj-4",
-    title: "Balıkesir OSB Ağır Makine & Talaşlı İmalat Fabrikası",
-    slug: "balikesir-osb-agir-makine",
-    category: "endustriyel",
-    categoryLabel: "OSB Fabrika",
+    title: "Bandırma OSB Lojistik Depo & Antrepo",
+    slug: "bandirma-osb-lojistik-antrepo",
+    category: "lojistik",
+    categoryLabel: "Lojistik Depo",
     status: "tamamlandi",
     statusLabel: "Tamamlandı",
-    location: "Balıkesir OSB 2. Etap",
-    areaSquareMeters: 11000,
-    structureType: "Ağır Çelik Konstrüksiyon",
+    location: "Bandırma OSB / Balıkesir",
+    areaSquareMeters: 16500,
+    structureType: "Prefabrik Betonarme + Çelik",
     deliveryTimeMonths: 9,
-    clientOrBrand: "Köse Ağır Sanayi Yatırımları",
-    coverImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop",
+    clientOrBrand: "Lojistik Şirketi",
+    coverImage: "assets/images/osb-3.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop"
+      "assets/images/osb-3.jpg",
+      "assets/images/osb-5.jpg"
     ],
-    scopeSummary: "Ağır tonajlı pres ve CNC tezgahları için özel titreşim sönümleyici temeller, 20 ton vinç kirişleri ve fotovoltaik (GES) panellere uyumlu güçlendirilmiş çatı makas sistemi.",
+    scopeSummary: "14 adet hidrolik seviye ayarlı yükleme rampası, 13 metre tavan yüksekliği, FM Global yangın yönetmeliği ve aşınmaya dirençli zemin betonları.",
     technicalSpecs: {
       craneCapacityTon: 20,
-      floorLoadCapacityKgM2: 9000,
-      substationKva: 2500,
+      floorLoadCapacityKgM2: 7500,
+      substationKva: 2000,
       canopyHeightMeters: null
     }
   },
   {
     id: "proj-5",
-    title: "Körfez Ekspres Akaryakıt & LPG İstasyonu",
-    slug: "korfez-lpg-akaryakit-istasyonu",
+    title: "Körfez Bölgesi Akaryakıt & Otogaz İstasyonu",
+    slug: "korfez-akaryakit-lpg-istasyonu",
     category: "akaryakit",
     categoryLabel: "Akaryakıt & LPG",
     status: "devam-ediyor",
     statusLabel: "Devam Ediyor",
     location: "Edremit Körfez Yolu / Balıkesir",
-    areaSquareMeters: 3900,
-    structureType: "Çelik Kanopi & Modüler İdari Bina",
+    areaSquareMeters: 4600,
+    structureType: "Çelik Kanopi & İdari Bina",
     deliveryTimeMonths: 4,
-    clientOrBrand: "Bölgesel Akaryakıt Dağıtım Ağı",
-    coverImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+    clientOrBrand: "Bölgesel Dağıtıcı Ağı",
+    coverImage: "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop"
     ],
     scopeSummary: "LPG dolum adası ve otomasyon altyapısı, çevre koruma drenaj kanalları, hidrokarbon ayrıştırıcı filtreler ve kurumsal kimlik giydirme taahhüdü.",
     technicalSpecs: {
@@ -135,27 +134,68 @@ const PROJECTS_DATA = [
   },
   {
     id: "proj-6",
-    title: "Savaştepe OSB Gıda İşleme & Soğuk Hava Deposu",
-    slug: "savastepe-osb-gida-isleme-depo",
+    title: "Balıkesir OSB Endüstriyel İmalat & Depo Kampüsü",
+    slug: "balikesir-osb-endustriyel-kampus",
     category: "endustriyel",
-    categoryLabel: "Endüstriyel Tesis",
+    categoryLabel: "OSB Fabrika",
     status: "devam-ediyor",
     statusLabel: "Devam Ediyor",
-    location: "Savaştepe OSB / Balıkesir",
-    areaSquareMeters: 7600,
-    structureType: "Karma (Prefabrik + Poliüretan Panel)",
+    location: "Balıkesir OSB 2. Etap",
+    areaSquareMeters: 11800,
+    structureType: "Ağır Çelik Konstrüksiyon",
     deliveryTimeMonths: 6,
-    clientOrBrand: "Bahar Agro Gıda A.Ş.",
-    coverImage: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1200&auto=format&fit=crop",
+    clientOrBrand: "Özel Sanayici",
+    coverImage: "assets/images/osb-4.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1200&auto=format&fit=crop"
+      "assets/images/osb-4.jpg",
+      "assets/images/osb-5.jpg"
     ],
-    scopeSummary: "HACCP hijyen standartlarında poliüretan sandviç panelli soğuk odalar, paslanmaz drenaj kanalları ve sıcak daldırma galvaniz çelik çatı konstrüksiyonu.",
+    scopeSummary: "Ağır makine parkuru için titreşim sönümlemeli zemin temelleri, 20 ton vinç kirişleri ve çatı GES panelleri taşıyıcı projesi.",
     technicalSpecs: {
-      craneCapacityTon: 5,
-      floorLoadCapacityKgM2: 5000,
-      substationKva: 1000,
+      craneCapacityTon: 20,
+      floorLoadCapacityKgM2: 8500,
+      substationKva: 2500,
       canopyHeightMeters: null
     }
+  }
+];
+
+// Firma Sosyal Medya & Şantiye Galerisi Görselleri
+const SOCIAL_GALLERY = [
+  {
+    img: "assets/images/osb-1.jpg",
+    title: "Balıkesir OSB Çelik Makas Montajı",
+    category: "OSB Şantiyesi",
+    badge: "Çelik Montaj"
+  },
+  {
+    img: "https://images.unsplash.com/photo-1527018606416-a674e140cca3?q=80&w=800&auto=format&fit=crop",
+    title: "Akaryakıt İstasyonu Kanopi İmalatı",
+    category: "Akaryakıt",
+    badge: "EPDK Standart"
+  },
+  {
+    img: "assets/images/osb-2.jpg",
+    title: "Organize Sanayi Fabrika Cephe Uygulaması",
+    category: "OSB Fabrika",
+    badge: "Anahtar Teslim"
+  },
+  {
+    img: "assets/images/osb-3.jpg",
+    title: "Lojistik Depo & Yükleme Rampaları",
+    category: "Lojistik Tesis",
+    badge: "Antrepo"
+  },
+  {
+    img: "assets/images/osb-4.jpg",
+    title: "Ağır Sanayi Çelik Taşıyıcı İskeleti",
+    category: "Ağır Çelik",
+    badge: "Statik İmalat"
+  },
+  {
+    img: "assets/images/osb-5.jpg",
+    title: "OSB Tesis İçi İdari Yönetim Bloğu",
+    category: "İdari Yapı",
+    badge: "Mimari Çözüm"
   }
 ];
