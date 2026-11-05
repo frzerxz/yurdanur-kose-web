@@ -1,0 +1,238 @@
+/* Yurdanur Köse Mimarlık & İnşaat - Endüstriyel & Akaryakıt Taahhüt Tasarım Sistemi */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --bg-primary: #1A1D20;
+  --bg-card: #24282D;
+  --bg-card-hover: #2D3238;
+  --accent-amber: #D97706;
+  --accent-amber-glow: rgba(217, 119, 6, 0.25);
+  --accent-blue: #0284C7;
+  --accent-blue-light: #38BDF8;
+  --accent-blue-glow: rgba(2, 132, 199, 0.25);
+  --surface-light: #F8FAFC;
+  --text-white: #FFFFFF;
+  --text-muted: #94A3B8;
+  --border-dark: #33383F;
+  --border-blueprint: rgba(2, 132, 199, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+}
+
+/* Headings with Space Grotesk */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Monospace for metrics & blueprints */
+.font-mono, .metric-val, .tech-badge, .blueprint-tag {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Blueprint Grid Background Pattern */
+.bg-blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(2, 132, 199, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.07) 1px, transparent 1px);
+}
+
+.bg-dot-matrix {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.12) 1.5px, transparent 0);
+}
+
+/* Technical Corner Markers for Cards */
+.tech-card {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card::before, .tech-card::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.tech-card::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--accent-blue);
+  border-left: 2px solid var(--accent-blue);
+}
+
+.tech-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--accent-blue);
+  border-right: 2px solid var(--accent-blue);
+}
+
+.tech-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 30px -10px var(--accent-blue-glow);
+  transform: translateY(-3px);
+}
+
+.tech-card:hover::before,
+.tech-card:hover::after {
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent-amber);
+}
+
+/* Blueprint Hover for Project Cards */
+.project-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.project-card .img-zoom {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+.project-card .blueprint-overlay {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: linear-gradient(180deg, rgba(2, 132, 199, 0.15) 0%, rgba(26, 29, 32, 0.95) 100%);
+}
+
+.project-card:hover .blueprint-overlay {
+  opacity: 1;
+}
+
+.project-card:hover {
+  border-color: var(--accent-blue-light);
+  box-shadow: 0 0 25px rgba(2, 132, 199, 0.2);
+}
+
+/* Engineering Crosshair */
+.crosshair {
+  position: relative;
+}
+.crosshair::before {
+  content: '+';
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--accent-blue);
+  top: 6px;
+  left: 6px;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* Amber Glowing Button */
+.btn-amber {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px var(--accent-amber-glow);
+}
+
+.btn-amber:hover {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Technical Blue Outline Button */
+.btn-blueprint {
+  background: rgba(2, 132, 199, 0.1);
+  border: 1px solid var(--accent-blue);
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-blueprint:hover {
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px var(--accent-blue-glow);
+  transform: translateY(-1px);
+}
+
+/* Hero Canvas & Video Overlay */
+.hero-overlay {
+  background: radial-gradient(circle at 60% 40%, rgba(2, 132, 199, 0.18) 0%, rgba(26, 29, 32, 0.85) 60%, rgba(26, 29, 32, 0.98) 100%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #33383F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Form Wizard Active Step Indicator */
+.step-item.active .step-number {
+  background-color: var(--accent-amber);
+  color: #FFFFFF;
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 12px var(--accent-amber-glow);
+}
+
+.step-item.completed .step-number {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+  border-color: var(--accent-blue);
+}
+
+/* Modal Transitions */
+.modal-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content-box {
+  transform: scale(0.95) translateY(15px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.open .modal-content-box {
+  transform: scale(1) translateY(0);
+}
