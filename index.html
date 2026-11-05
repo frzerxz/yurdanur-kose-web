@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yurdanur Köse Mimarlık & Taahhüt | 3D Sanayi & Akaryakıt Portalı</title>
+  <title>Yurdanur Köse Mimarlık & Taahhüt | Sanayi & Akaryakıt Tesisleri</title>
   
+  <!-- Sayfa Yenilenince (F5) Kesinlikle En Başa Al -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+      window.scrollTo(0, 0);
+    }
+  </script>
+
   <!-- SEO & Meta Tags -->
   <meta name="description" content="Balıkesir, Muradiye ve çevre OSB'lerde ağır sanayi fabrikaları, lojistik depolar ve EPDK standartlarında akaryakıt istasyonları mimari projelendirme ve taahhüdü.">
   <meta name="keywords" content="yurdanur köse, mimarlık, organize sanayi, balıkesir osb, muradiye osb, akaryakıt istasyonu, çelik konstrüksiyon, 3d mimari">
@@ -57,8 +69,8 @@
   <!-- 1. MINIMAL FLOATING HEADER (STUART TANNER / WAKEFORD STYLE) -->
   <!-- ========================================================================= -->
   <header class="site-header flex items-center justify-between">
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-3 group">
+    <!-- Logo (Tıklayınca Yumuşakça En Tepeye Çıkar) -->
+    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center gap-3 group">
       <div class="w-10 h-10 rounded bg-[#D4A373] text-[#0D1013] font-heading font-extrabold text-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-md shadow-[#D4A373]/20">
         YK
       </div>
@@ -84,12 +96,12 @@
 
     <!-- Hızlı Aksiyon -->
     <div class="hidden sm:flex items-center gap-4">
-      <button onclick="openInventoryModal()" class="btn-minimal text-xs py-2 px-3 text-slate-300 hover:text-white" title="Instagram Fotoğraf & Gönderi Envanteri">
-        <i class="fa-solid fa-table-list text-[#D4A373]"></i>
-        <span>Görsel Envanteri</span>
-      </button>
+      <a href="tel:02662439665" class="text-xs font-mono text-slate-300 hover:text-white flex items-center gap-2">
+        <i class="fa-solid fa-phone text-[#D4A373]"></i>
+        <span>0266 243 96 65</span>
+      </a>
       <a href="#teklif-formu" class="btn-gold text-xs py-2 px-4 rounded">
-        <span>Keşif & Teklif</span>
+        <span>Keşif & Teklif İste</span>
       </a>
     </div>
 
@@ -106,10 +118,8 @@
     <a href="#uzmanliklar" class="block text-slate-200 hover:text-[#D4A373]">Uzmanlık Alanları</a>
     <a href="#akis" class="block text-slate-200 hover:text-[#D4A373]">Canlı 3D Fotoğraf Akışı</a>
     <a href="#standartlar" class="block text-slate-200 hover:text-[#D4A373]">EPDK & İSG Standartları</a>
+    <a href="#iletisim" class="block text-slate-200 hover:text-[#D4A373]">Şubeler & Harita</a>
     <a href="#teklif-formu" class="block btn-gold text-center py-2.5 rounded mt-4">Hızlı Keşif İste</a>
-    <button onclick="openInventoryModal()" class="w-full text-center py-2 text-xs font-mono text-slate-400 hover:text-white border-t border-white/5 pt-3">
-      <i class="fa-solid fa-table-list mr-1"></i> Doğrulanmış Görsel Envanteri
-    </button>
   </div>
 
   <!-- ========================================================================= -->
@@ -130,7 +140,7 @@
       <canvas id="hero-3d-canvas"></canvas>
     </div>
 
-    <!-- Hero Ön Plan İçeriği (Stuart Tanner Typography) -->
+    <!-- Hero Ön Plan İçeriği -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 w-full">
       <div class="max-w-3xl space-y-6">
         
@@ -153,14 +163,14 @@
         </p>
 
         <div class="flex flex-wrap items-center gap-4 pt-4">
-          <a href="#projeler" class="btn-gold py-3 px-7 rounded font-semibold text-sm">
+          <a href="#projeler" class="btn-gold py-3 px-8 rounded font-semibold text-sm">
             <span>Projeleri İnceleyin</span>
             <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
           </a>
-          <button onclick="openInventoryModal()" class="btn-minimal py-3 px-6 rounded font-semibold text-sm">
-            <i class="fa-solid fa-camera-retro text-[#D4A373]"></i>
-            <span>39 Gerçek Fotoğraf Envanteri</span>
-          </button>
+          <a href="#teklif-formu" class="btn-minimal py-3 px-8 rounded font-semibold text-sm">
+            <i class="fa-solid fa-calculator text-[#D4A373]"></i>
+            <span>Maliyet & Keşif İste</span>
+          </a>
         </div>
 
         <div class="pt-6 flex items-center gap-3 text-xs font-mono text-slate-400">
@@ -240,21 +250,16 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 5. KESİNTİSİZ AKAN 3D FOTOĞRAF ŞERİDİ ("GÖRSELLER AKSIN") -->
+  <!-- 5. KESİNTİSİZ AKAN 3D FOTOĞRAF ŞERİDİ ("GÖRSELLER AKSIN" - YAZISIZ & TEMİZ) -->
   <!-- ========================================================================= -->
   <section id="akis" class="py-20 bg-[#12161C] border-y border-white/10 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div>
-        <span class="text-xs font-mono uppercase tracking-widest text-[#D4A373] block mb-1">
-          Canlı Şantiye & Uygulama Arşivi
-        </span>
-        <h3 class="text-2xl font-heading font-bold text-white">
-          3D Kesintisiz Görsel Akışı
-        </h3>
-      </div>
-      <p class="text-xs text-slate-400 font-mono">
-        <i class="fa-solid fa-hand-pointer text-[#D4A373] mr-1"></i> Üzerine gelince durur • Tıklayınca HD açılır
-      </p>
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 mb-8">
+      <span class="text-xs font-mono uppercase tracking-widest text-[#D4A373] block mb-1">
+        Canlı Şantiye & Uygulama Arşivi
+      </span>
+      <h3 class="text-2xl font-heading font-bold text-white">
+        3D Kesintisiz Görsel Akışı
+      </h3>
     </div>
 
     <!-- Üst Şerit (Sola Akar) -->
@@ -411,28 +416,28 @@
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div>
           <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-1">
-            <i class="fa-solid fa-shield-halved mr-1"></i> %100 Mevzuat & Güvenlik
+            <i class="fa-solid fa-shield-halved mr-1"></i> %100 Resmi Mevzuat & Güvenlik
           </span>
           <h3 class="text-2xl font-heading font-bold text-white">
             EPDK, İSG ve İmar Güvencesi
           </h3>
           <p class="text-xs text-slate-400 mt-1 max-w-xl">
-            Akaryakıt kanopilerinden patlayıcı ortam risk yönetimine kadar tüm aşamalar resmi mevzuat şartnameleriyle belgelenir.
+            Akaryakıt kanopilerinden patlayıcı ortam risk yönetimine kadar tüm aşamalar resmi şartnamelere harfiyen uygundur.
           </p>
         </div>
 
         <div class="flex flex-wrap items-center gap-3">
-          <button onclick="openEpdkModal()" class="px-4 py-2.5 rounded bg-white/5 border border-white/10 hover:border-[#D4A373] text-xs font-mono text-slate-200 transition-colors flex items-center gap-2">
+          <button onclick="openEpdkModal()" class="px-5 py-3 rounded bg-white/5 border border-white/10 hover:border-[#D4A373] text-xs font-mono text-slate-200 transition-colors flex items-center gap-2">
             <i class="fa-solid fa-gas-pump text-[#D4A373]"></i>
-            <span>EPDK & İSG Beyanı</span>
+            <span>EPDK / İSG Güvencesi</span>
           </button>
-          <button onclick="openPrivacyModal()" class="px-4 py-2.5 rounded bg-white/5 border border-white/10 hover:border-[#D4A373] text-xs font-mono text-slate-200 transition-colors flex items-center gap-2">
+          <button onclick="openPrivacyModal()" class="px-5 py-3 rounded bg-white/5 border border-white/10 hover:border-[#D4A373] text-xs font-mono text-slate-200 transition-colors flex items-center gap-2">
             <i class="fa-solid fa-lock text-cyan-400"></i>
             <span>Gizlilik Politikası</span>
           </button>
-          <button onclick="openKvkkModal()" class="px-4 py-2.5 rounded bg-white/5 border border-white/10 hover:border-[#D4A373] text-xs font-mono text-slate-200 transition-colors flex items-center gap-2">
+          <button onclick="openKvkkModal()" class="px-5 py-3 rounded bg-white/5 border border-white/10 hover:border-[#D4A373] text-xs font-mono text-slate-200 transition-colors flex items-center gap-2">
             <i class="fa-solid fa-file-shield text-emerald-400"></i>
-            <span>KVKK Aydınlatma</span>
+            <span>KVKK Aydınlatma Metni</span>
           </button>
         </div>
       </div>
@@ -581,7 +586,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 10. ŞUBELERİMİZ & LOKASYONLAR -->
+  <!-- 10. ŞUBELERİMİZ & HARİTA YÖNLENDİRMELERİ -->
   <!-- ========================================================================= -->
   <section id="iletisim" class="py-20 bg-[#101419] border-t border-white/10">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
@@ -593,56 +598,104 @@
         <h3 class="text-2xl font-heading font-bold text-white">
           Ofis ve Saha Koordinasyon Noktaları
         </h3>
+        <p class="text-xs text-slate-400 mt-1">
+          Aşağıdaki adres kartlarından doğrudan Google Haritalar navigasyonunu başlatabilirsiniz.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Merkez Ofis -->
-        <div class="p-6 rounded bg-[#161B21] border border-white/5 space-y-3">
-          <div class="flex items-center justify-between text-xs font-mono text-[#D4A373]">
-            <span>GENEL MERKEZ</span>
-            <i class="fa-solid fa-building"></i>
+        <!-- Merkez Ofis (Google Maps Bağlantılı) -->
+        <div class="p-6 rounded bg-[#161B21] border border-white/5 hover:border-[#D4A373]/40 transition-colors flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono text-[#D4A373]">
+              <span>GENEL MERKEZ</span>
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h4 class="font-heading font-bold text-white text-base">Balıkesir Karesi Ofisi</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Bandırma Caddesi No: 41/A, Karesi / Balıkesir
+            </p>
+            <div class="pt-1 flex flex-col gap-1 text-xs text-slate-400 font-mono">
+              <span><i class="fa-solid fa-phone text-[#D4A373] mr-2"></i>0266 243 96 65</span>
+              <span><i class="fa-solid fa-envelope text-[#D4A373] mr-2"></i>info@yurdanurkose.com</span>
+            </div>
           </div>
-          <h4 class="font-heading font-bold text-white text-base">Balıkesir Karesi Ofisi</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Bandırma Caddesi No: 41/A, Karesi / Balıkesir
-          </p>
-          <div class="pt-2 flex flex-col gap-1 text-xs text-slate-300 font-mono">
-            <span><i class="fa-solid fa-phone text-[#D4A373] mr-2"></i>0266 243 96 65</span>
-            <span><i class="fa-solid fa-envelope text-[#D4A373] mr-2"></i>info@yurdanurkose.com</span>
-          </div>
+
+          <a 
+            href="https://maps.google.com/?q=Band%C4%B1rma+Caddesi+No:41/A+Karesi+Bal%C4%B1kesir" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="pt-3 border-t border-white/10 inline-flex items-center justify-between text-xs font-mono text-[#D4A373] hover:text-white transition-colors group"
+          >
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+              <span>Google Haritalarda Aç & Yol Tarifi</span>
+            </span>
+            <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+          </a>
         </div>
 
-        <!-- OSB Şubesi -->
-        <div class="p-6 rounded bg-[#161B21] border border-white/5 space-y-3">
-          <div class="flex items-center justify-between text-xs font-mono text-[#D4A373]">
-            <span>SANAYİ ŞUBESİ</span>
-            <i class="fa-solid fa-industry"></i>
+        <!-- OSB Şubesi (Google Maps Bağlantılı) -->
+        <div class="p-6 rounded bg-[#161B21] border border-white/5 hover:border-[#D4A373]/40 transition-colors flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono text-[#D4A373]">
+              <span>SANAYİ ŞUBESİ</span>
+              <i class="fa-solid fa-industry"></i>
+            </div>
+            <h4 class="font-heading font-bold text-white text-base">Balıkesir Organize Sanayi</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              BALOSB Genişleme Bölgesi Şantiye Koordinasyon Merkezi
+            </p>
+            <div class="pt-1 flex flex-col gap-1 text-xs text-slate-400 font-mono">
+              <span><i class="fa-solid fa-clock text-[#D4A373] mr-2"></i>Hafta İçi: 08:30 - 18:00</span>
+              <span><i class="fa-solid fa-hard-hat text-[#D4A373] mr-2"></i>Saha Şantiye Amiri</span>
+            </div>
           </div>
-          <h4 class="font-heading font-bold text-white text-base">Balıkesir Organize Sanayi</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            BALOSB Genişleme Bölgesi Şantiye Koordinasyon Merkezi
-          </p>
-          <div class="pt-2 flex flex-col gap-1 text-xs text-slate-300 font-mono">
-            <span><i class="fa-solid fa-clock text-[#D4A373] mr-2"></i>Hafta İçi: 08:30 - 18:00</span>
-            <span><i class="fa-solid fa-hard-hat text-[#D4A373] mr-2"></i>Saha Şantiye Amiri</span>
-          </div>
+
+          <a 
+            href="https://maps.google.com/?q=Bal%C4%B1kesir+Organize+Sanayi+B%C3%B6lgesi" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="pt-3 border-t border-white/10 inline-flex items-center justify-between text-xs font-mono text-[#D4A373] hover:text-white transition-colors group"
+          >
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+              <span>Haritada Göster & Yol Tarifi</span>
+            </span>
+            <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+          </a>
         </div>
 
-        <!-- Akaryakıt & Servis Şubesi -->
-        <div class="p-6 rounded bg-[#161B21] border border-white/5 space-y-3">
-          <div class="flex items-center justify-between text-xs font-mono text-[#D4A373]">
-            <span>AKARYAKIT NOKTASI</span>
-            <i class="fa-solid fa-gas-pump"></i>
+        <!-- Akaryakıt & Servis Şubesi (Google Maps Bağlantılı) -->
+        <div class="p-6 rounded bg-[#161B21] border border-white/5 hover:border-[#D4A373]/40 transition-colors flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono text-[#D4A373]">
+              <span>AKARYAKIT NOKTASI</span>
+              <i class="fa-solid fa-gas-pump"></i>
+            </div>
+            <h4 class="font-heading font-bold text-white text-base">Akaryakıt & Servis Tesisleri</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Balıkesir - Bursa Çevre Yolu Mevkii, İstasyon Sahası
+            </p>
+            <div class="pt-1 flex flex-col gap-1 text-xs text-slate-400 font-mono">
+              <span><i class="fa-solid fa-certificate text-emerald-400 mr-2"></i>EPDK Lisanslı Tesis</span>
+              <span><i class="fa-solid fa-shield text-[#D4A373] mr-2"></i>7/24 Kesintisiz Hizmet</span>
+            </div>
           </div>
-          <h4 class="font-heading font-bold text-white text-base">Akaryakıt & Servis Tesisleri</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Balıkesir - Bursa Çevre Yolu Mevkii, İstasyon Sahası
-          </p>
-          <div class="pt-2 flex flex-col gap-1 text-xs text-slate-300 font-mono">
-            <span><i class="fa-solid fa-certificate text-emerald-400 mr-2"></i>EPDK Lisanslı Tesis</span>
-            <span><i class="fa-solid fa-shield text-[#D4A373] mr-2"></i>7/24 Kesintisiz Hizmet</span>
-          </div>
+
+          <a 
+            href="https://maps.google.com/?q=Bal%C4%B1kesir+Bursa+Yolu+Akaryak%C4%B1t" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="pt-3 border-t border-white/10 inline-flex items-center justify-between text-xs font-mono text-[#D4A373] hover:text-white transition-colors group"
+          >
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+              <span>Haritada Aç & Navigasyon</span>
+            </span>
+            <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+          </a>
         </div>
 
       </div>
@@ -665,8 +718,7 @@
       <div class="flex flex-wrap items-center gap-6">
         <button onclick="openEpdkModal()" class="hover:text-white transition-colors">EPDK & İSG Güvencesi</button>
         <button onclick="openPrivacyModal()" class="hover:text-white transition-colors">Gizlilik Politikası</button>
-        <button onclick="openKvkkModal()" class="hover:text-white transition-colors">KVKK Aydınlatma</button>
-        <button onclick="openInventoryModal()" class="text-[#D4A373] hover:underline font-mono">Görsel Envanteri</button>
+        <button onclick="openKvkkModal()" class="hover:text-white transition-colors">KVKK Aydınlatma Metni</button>
       </div>
 
     </div>
@@ -682,53 +734,7 @@
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 13. DOĞRULANMIŞ GÖRSEL ENVANTERİ MODALI (GPT ÖNERİSİ: ŞEFFAF ENVANTER) -->
-  <!-- ========================================================================= -->
-  <div id="inventory-modal" class="modal-backdrop">
-    <div class="modal-panel max-w-4xl p-6 sm:p-8">
-      
-      <div class="flex justify-between items-center pb-4 border-b border-white/10">
-        <div>
-          <span class="text-xs font-mono text-[#D4A373] uppercase tracking-wider block">Şeffaflık & Doğruluk</span>
-          <h3 class="text-xl font-heading font-bold text-white">Resmi Instagram Proje ve Görsel Envanteri</h3>
-        </div>
-        <button onclick="closeInventoryModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-      </div>
-
-      <p class="text-xs text-slate-300 py-4 leading-relaxed">
-        Bu web sitesindeki her görsel ve başlık, firmanın resmi Instagram arşivinden (<a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" class="text-[#D4A373] underline">@yurdanurkosemimarlik</a>) alınmış ve gönderi açıklamalarıyla birebir doğrulanmıştır. Hiçbir uydurma görsel veya proje adı kullanılmamıştır.
-      </p>
-
-      <div class="overflow-x-auto max-h-[60vh] border border-white/10 rounded">
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="bg-white/5 border-b border-white/10 font-mono text-[11px] text-slate-400 uppercase">
-              <th class="py-2.5 px-4">No</th>
-              <th class="py-2.5 px-4">Görsel</th>
-              <th class="py-2.5 px-4">Proje Adı</th>
-              <th class="py-2.5 px-4">Kategori</th>
-              <th class="py-2.5 px-4">Doğrulanmış Instagram Açıklaması</th>
-            </tr>
-          </thead>
-          <tbody id="inventory-table-body">
-            <!-- JS injects inventory rows -->
-          </tbody>
-        </table>
-      </div>
-
-      <div class="pt-4 text-right">
-        <button onclick="closeInventoryModal()" class="btn-minimal text-xs py-2 px-5 rounded">
-          Kapat
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ========================================================================= -->
-  <!-- 14. TAM EKRAN LIGHTBOX -->
+  <!-- 13. TAM EKRAN LIGHTBOX -->
   <!-- ========================================================================= -->
   <div id="photo-lightbox" class="lightbox-backdrop" onclick="closePhotoLightbox()">
     <div class="relative max-w-5xl max-h-[90vh] p-4 flex flex-col items-center" onclick="event.stopPropagation()">
@@ -741,80 +747,282 @@
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 15. EPDK / İSG BEYANI MODALI -->
+  <!-- 14. EPDK / İSG BEYANI VE STANDARTLARI TAM ŞARTNAME METNİ (KAPSAMLI) -->
   <!-- ========================================================================= -->
   <div id="epdk-modal" class="modal-backdrop">
-    <div class="modal-panel max-w-2xl p-6 sm:p-8">
-      <div class="flex justify-between items-center pb-4 border-b border-white/10">
-        <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-          <span>EPDK, İSG ve İmar Güvencesi Şartnamesi</span>
-        </h3>
-        <button onclick="closeEpdkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+    <div class="modal-panel max-w-4xl p-6 sm:p-10">
+      
+      <div class="flex justify-between items-center pb-5 border-b border-white/10">
+        <div>
+          <span class="text-xs font-mono text-[#D4A373] uppercase tracking-wider block">Resmi Mevzuat Uyumluluğu</span>
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+            <span>EPDK & İSG Standartları ve Teknik Güvence Şartnamesi</span>
+          </h3>
+        </div>
+        <button onclick="closeEpdkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
-      <div class="py-4 space-y-4 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto">
-        <p><strong>1. Akaryakıt ve LPG İstasyonu Standartları:</strong> Firmamız tarafından projelendirilen ve inşa edilen tüm akaryakıt tesisleri; Enerji Piyasası Düzenleme Kurumu (EPDK) Petrol Piyasası Lisans Yönetmeliği, TSE 12820 ve Binaların Yangından Korunması Hakkında Yönetmelik kriterlerine harfiyen uygundur.</p>
-        <p><strong>2. Emniyet Mesafeleri & Ex-Proof Altyapı:</strong> Yeraltı akaryakıt tankları, dispenser adaları, nefeslik boruları ve kanopi taşıyıcılarında tehlikeli bölge (Zone 0, Zone 1, Zone 2) sınıflandırmalarına uygun ATEX sertifikalı ex-proof elektrik ekipmanları kullanılır.</p>
-        <p><strong>3. Ağır Sanayi Şantiye Disiplini:</strong> 6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında şantiyelerimizde sıfır kaza toleransı ilkesiyle hareket edilir. Yüksekte çalışma, ağır çelik kaldırma ve vinç operasyonlarında tam sertifikalı personel görev alır.</p>
+
+      <div class="py-6 space-y-6 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto pr-2">
+        
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-gavel text-[#D4A373]"></i>
+            <span>1. 5015 Sayılı Petrol Piyasası Kanunu ve EPDK Lisanslama Standartları</span>
+          </h4>
+          <p class="text-slate-300">
+            Yurdanur Köse Mimarlık İnşaat ve Tic. Ltd. Şti. tarafından projelendirilen ve anahtar teslim inşa edilen tüm akaryakıt, LPG ve otogaz istasyonları; Enerji Piyasası Düzenleme Kurumu (EPDK) Petrol Piyasası Lisans Yönetmeliği, Sıvılaştırılmış Petrol Gazları (LPG) Piyasası Lisans Yönetmeliği ve ilgili teknik mevzuatlara %100 uyumludur. İstasyon projeleri hazırlanırken dağıtıcı kurumsal kimliği ile EPDK asgari mesafe ve altyapı kriterleri eş zamanlı doğrulanır.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-ruler-combined text-cyan-400"></i>
+            <span>2. TSE 12820 Emniyet Mesafeleri ve Geometrik Yerleşim Kriterleri</span>
+          </h4>
+          <p class="text-slate-300">
+            İstasyon sahalarında yer alan yeraltı akaryakıt depolama tankları, dispenser adaları, dolum ağızları ve nefeslik borularının; idari binalara, komşu parsel sınırlarına, trafo merkezlerine, raylı sistemlere ve havai enerji iletim hatlarına olan mesafeleri TSE 12820 (Akaryakıt İstasyonları - Emniyet Gerekleri) standardının güncel versiyonundaki koruma tablolarına göre milimetrik hassasiyetle çizilerek sahada uygulanır.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-bolt-lightning text-amber-400"></i>
+            <span>3. ATEX Direktifleri & Patlayıcı Ortamlarda Ex-Proof Ekipman Yönetimi</span>
+          </h4>
+          <p class="text-slate-300">
+            Akaryakıt buharının veya yanıcı gazların bulunabileceği tehlikeli alanlar TS EN 60079 standardına göre Zone 0 (sürekli patlayıcı atmosfer), Zone 1 (normal çalışmada oluşabilecek atmosfer) ve Zone 2 (yalnızca kaza anında kısa süreli oluşabilecek atmosfer) olarak haritalandırılır. Bu bölgelerde yalnızca ATEX sertifikalı, alev sızdırmaz (d tipi), artırılmış emniyetli (e tipi) veya kendinden emniyetli (i tipi) armatür, buat ve kablolama altyapısı tesis edilir.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-oil-well text-emerald-400"></i>
+            <span>4. Çift Cidarlı Tanklar, Kaçak Algılama ve Katodik Koruma</span>
+          </h4>
+          <p class="text-slate-300">
+            Yeraltı yakıt tanklarımız EN 12285-1 standardına uygun çift cidarlı (double wall) karbon çelik veya kompozit malzemelerden imal edilir. İki cidar arasında sıvı veya vakum esaslı kaçak algılama sensörleri monte edilerek olası korozyon veya delinmelerde yeraltı sularının kirlenmesi anında önlenir. Tank havuzları drenaj membranları ile sızdırmaz hale getirilir ve galvanik anotlu katodik koruma ölçümleri resmi mühendislik raporuyla teslim edilir.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-helmet-safety text-[#D4A373]"></i>
+            <span>5. 6331 Sayılı İş Sağlığı ve Güvenliği (İSG) Kanunu Şantiye Disiplini</span>
+          </h4>
+          <p class="text-slate-300">
+            Şantiyelerimizde "Sıfır Kaza" prensibi temel çalışma kuralımızdır. Ağır çelik konstrüksiyon montajları, vinç kaldırma operasyonları, derin kazı istinat çalışmaları ve yüksekte montaj faaliyetlerinde A Sınıfı İSG uzmanlarımız gözetiminde Risk Değerlendirme Analizleri (Risk Assessment) yapılır. Tüm çalışanlarımız KKD (Kişisel Koruyucu Donanım) standartlarına tam uyumla çalışır, sıcak çalışma (Hot Work Permit) izinleri yazılı tutanakla yönetilir.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-fire-extinguisher text-rose-400"></i>
+            <span>6. Yangından Korunma Yönetmeliği ve Acil Kapatma (ESD) Altyapısı</span>
+          </h4>
+          <p class="text-slate-300">
+            Binaların Yangından Korunması Hakkında Yönetmelik gereğince; dispenser adalarında kuru kimyevi tozlu yangın söndürme sistemleri, köpüklü söndürücüler, alev algılama dedektörleri ve tehlike anında tüm akaryakıt akışını ve elektriği 0.5 saniyede kesen Acil Kapatma Butonları (Emergency Shut Down - ESD) entegre edilir.
+          </p>
+        </div>
+
       </div>
-      <div class="pt-4 border-t border-white/10 text-right">
-        <button onclick="closeEpdkModal()" class="btn-minimal text-xs py-2 px-5 rounded">Anladım, Kapat</button>
+
+      <div class="pt-5 border-t border-white/10 flex items-center justify-between">
+        <span class="text-[11px] font-mono text-slate-400">
+          Belge Kodu: YK-EPDK-ISG-STD-2026 / Rev. 04
+        </span>
+        <button onclick="closeEpdkModal()" class="btn-minimal text-xs py-2 px-6 rounded">
+          Kapat
+        </button>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 16. GİZLİLİK POLİTİKASI MODALI -->
+  <!-- 15. GİZLİLİK POLİTİKASI (AYRINTILI & KAPSAMLI KURUMSAL METİN) -->
   <!-- ========================================================================= -->
   <div id="privacy-modal" class="modal-backdrop">
-    <div class="modal-panel max-w-2xl p-6 sm:p-8">
-      <div class="flex justify-between items-center pb-4 border-b border-white/10">
-        <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-lock text-cyan-400"></i>
-          <span>Gizlilik Politikası</span>
-        </h3>
-        <button onclick="closePrivacyModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+    <div class="modal-panel max-w-4xl p-6 sm:p-10">
+      
+      <div class="flex justify-between items-center pb-5 border-b border-white/10">
+        <div>
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider block">Veri Güvenliği Taahhüdü</span>
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-lock text-cyan-400"></i>
+            <span>Gizlilik Politikası ve Çerez Yönetimi Sözleşmesi</span>
+          </h3>
+        </div>
+        <button onclick="closePrivacyModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
-      <div class="py-4 space-y-3 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto">
-        <p><strong>Yurdanur Köse Mimarlık İnşaat ve Ticaret Ltd. Şti.</strong> olarak web sitemizi ziyaret eden müşterilerimizin ve iş ortaklarımızın gizliliğine azami hassasiyet göstermekteyiz.</p>
-        <p>Keşif ve teklif formu aracılığıyla toplanan isim, telefon ve proje bilgileri yalnızca teknik değerlendirme, keşif organizasyonu ve sizinle doğrudan iletişim kurmak amacıyla işlenir. Verileriniz üçüncü şahıslara veya ticari kuruluşlara asla devredilmez.</p>
+
+      <div class="py-6 space-y-6 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto pr-2">
+        
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">1. Genel Bilgilendirme ve Veri Sorumlusu</h4>
+          <p>
+            İşbu Gizlilik Politikası, <strong>Yurdanur Köse Mimarlık İnşaat ve Ticaret Limited Şirketi</strong> (“Şirket”) tarafından işletilen web sitesini ziyaret eden kullanıcıların, keşif/teklif talebinde bulunan iş ortaklarının ve müşterilerin gizlilik haklarını korumak amacıyla hazırlanmıştır. Şirketimiz, kişisel verilerin gizliliğini Anayasa’nın 20. maddesi ve 6698 sayılı Kişisel Verilerin Korunması Kanunu çerçevesinde en üst düzey öncelik olarak kabul etmektedir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">2. Toplanan Kişisel Veriler ve Elde Edilme Yöntemleri</h4>
+          <p>
+            Web sitemiz üzerinden doğrudan doldurduğunuz teklif ve keşif formları, e-posta yazışmaları ve telefon görüşmeleri vasıtasıyla ad-soyad, firma unvanı, telefon numarası, e-posta adresi, inşaat yapılacak arsa/parsel lokasyonu ve tahmini metrekare bilgileri toplanmaktadır. Ayrıca sitemizi ziyaretiniz sırasında log kayıtları (IP adresi, tarayıcı türü, erişim saati ve işletim sistemi) otomatik olarak işlenmektedir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">3. Verilerin İşlenme Amaçları</h4>
+          <p>
+            Toplanan kişisel ve teknik veriler; mimari keşif ve fizibilite raporlarının hazırlanması, Organize Sanayi Bölgesi (OSB) ve akaryakıt tesislerine yönelik maliyet tekliflerinin oluşturulması, talep eden müşterilerle WhatsApp veya telefon kanalıyla teknik koordinasyon sağlanması, EPDK ve ilgili belediye imar mevzuatına yönelik ruhsat süreçlerinin yürütülmesi amaçlarıyla sınırlı olarak işlenir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">4. Çerez (Cookie) Politikası ve Dijital Analitik</h4>
+          <p>
+            Web sitemizde kullanıcı deneyimini iyileştirmek, 3D WebGL mimari canvas sahnelerinin performansını optimize etmek ve sayfa yüklenme hızlarını denetlemek amacıyla zorunlu ve analitik çerezler kullanılmaktadır. Çerezler tarayıcınız vasıtasıyla saklanan küçük metin dosyaları olup bilgisayarınıza veya dosyalarınıza zarar vermez. Dilediğiniz takdirde tarayıcı ayarlarınızdan çerezleri engelleyebilir veya silebilirsiniz.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">5. Veri Güvenliği, SSL Şifreleme ve Altyapı Tedbirleri</h4>
+          <p>
+            Web sitemiz 256-bit SSL (Secure Sockets Layer) güvenlik sertifikası ile korunmaktadır. Form üzerinden ilettiğiniz veriler şifrelenerek aktarılır. Şirketimiz bünyesindeki sunucular yetkisiz erişimlere, siber saldırılara, veri kaybına ve kötüye kullanıma karşı güvenlik duvarları (Firewall) ve periyodik sızma testleri ile korunmaktadır.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">6. Üçüncü Taraflarla Paylaşım Kısıtlamaları</h4>
+          <p>
+            Şirketimiz, kullanıcıların veya müşterilerin kişisel ve ticari proje verilerini açık rıza olmaksızın hiçbir reklam, pazarlama veya ticari üçüncü tarafla paylaşmaz, satmaz veya kiralamaz. Veriler yalnızca kanuni zorunluluk halinde adli ve idari makamların (savcılık, mahkemeler, EPDK, OSB Bölge Müdürlüğü) resmi yazılı talepleri doğrultusunda yetkili mercilere sunulabilir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">7. İletişim ve Hak Talepleri</h4>
+          <p>
+            Gizlilik Politikamız ile ilgili tüm sorularınız ve hak talepleriniz için <strong>info@yurdanurkose.com</strong> e-posta adresinden veya <strong>0266 243 96 65</strong> numaralı şirket santralimizden bizimle iletişime geçebilirsiniz.
+          </p>
+        </div>
+
       </div>
-      <div class="pt-4 border-t border-white/10 text-right">
-        <button onclick="closePrivacyModal()" class="btn-minimal text-xs py-2 px-5 rounded">Kapat</button>
+
+      <div class="pt-5 border-t border-white/10 flex items-center justify-between">
+        <span class="text-[11px] font-mono text-slate-400">
+          Son Güncelleme: Kasım 2026 / Yurdanur Köse Mimarlık Hukuk Birimi
+        </span>
+        <button onclick="closePrivacyModal()" class="btn-minimal text-xs py-2 px-6 rounded">
+          Kapat
+        </button>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 17. KVKK AYDINLATMA METNİ MODALI -->
+  <!-- 16. KVKK AYDINLATMA METNİ (6698 SAYILI KANUN MADDE 10'A TAM UYUMLU) -->
   <!-- ========================================================================= -->
   <div id="kvkk-modal" class="modal-backdrop">
-    <div class="modal-panel max-w-2xl p-6 sm:p-8">
-      <div class="flex justify-between items-center pb-4 border-b border-white/10">
-        <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-file-shield text-emerald-400"></i>
-          <span>KVKK Aydınlatma Metni</span>
-        </h3>
-        <button onclick="closeKvkkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+    <div class="modal-panel max-w-4xl p-6 sm:p-10">
+      
+      <div class="flex justify-between items-center pb-5 border-b border-white/10">
+        <div>
+          <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider block">Yasal Aydınlatma Yükümlülüğü</span>
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-file-shield text-emerald-400"></i>
+            <span>6698 Sayılı KVKK Kapsamında Aydınlatma Metni</span>
+          </h3>
+        </div>
+        <button onclick="closeKvkkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
-      <div class="py-4 space-y-3 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto">
-        <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, veri sorumlusu sıfatıyla Yurdanur Köse Mimarlık İnşaat ve Ticaret Ltd. Şti. tarafından kişisel verileriniz kanuna uygun olarak işlenmektedir.</p>
-        <p>İletişim ve keşif taleplerinizde paylaştığınız kişisel verileriniz, mimari proje hazırlığı, yasal izin süreçleri ve teklif süreçlerinin yürütülmesi amaçlarıyla sınırlı olarak saklanmaktadır.</p>
+
+      <div class="py-6 space-y-6 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto pr-2">
+        
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">1. Veri Sorumlusunun Kimliği</h4>
+          <p>
+            6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, veri sorumlusu sıfatıyla <strong>Yurdanur Köse Mimarlık İnşaat ve Ticaret Limited Şirketi</strong> (Bandırma Caddesi No: 41/A, Karesi / Balıkesir; Ticaret Sicil No: 18452; Karesi V.D.: 9840552140) olarak, kişisel verilerinizin güvenliğine ve hukuka uygun şekilde işlenmesine azami önem veriyoruz.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">2. İşlenen Kişisel Veri Kategorileri</h4>
+          <ul class="list-disc pl-5 space-y-1 text-slate-300">
+            <li><strong>Kimlik Bilgisi:</strong> Ad, soyad, firma unvanı ve yetkili kişi bilgileri.</li>
+            <li><strong>İletişim Bilgisi:</strong> Telefon numarası, kurumsal e-posta adresi, tebligat adresi.</li>
+            <li><strong>Müşteri İşlem Bilgisi:</strong> Talep edilen proje türü (OSB fabrika, akaryakıt istasyonu, çelik kanopi vb.), tahmini bütçe ve metrekare gereksinimleri, keşif notları.</li>
+            <li><strong>Lokasyon / Saha Bilgisi:</strong> İmar parseli, OSB genişleme bölgesi koordinatları ve şantiye teslim adresi.</li>
+            <li><strong>İşlem Güvenliği Bilgisi:</strong> IP adresleri, log kayıtları ve web sitesi form onay zaman damgaları.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">3. Kişisel Verilerin İşlenme Amaçları</h4>
+          <p>
+            Kişisel verileriniz; mimarlık ve inşaat taahhüt hizmet sözleşmelerinin kurulması ve ifası, statik ve mimari keşif raporlamalarının yürütülmesi, maliyet analizlerinin hazırlanarak teklif sunulması, EPDK lisans süreçlerinin ve belediye imar ruhsat işlemlerinin takip edilmesi, teknik ekibimizle WhatsApp veya telefon üzerinden şantiye koordinasyonunun sağlanması ve resmi muhasebe/fatura yükümlülüklerinin yerine getirilmesi amacıyla işlenmektedir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">4. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi</h4>
+          <p>
+            Kişisel verileriniz, internet sitemizdeki interaktif teklif formu, e-posta, telefon, fiziki ofis ziyaretleri ve şantiye saha görüşmeleri aracılığıyla sözlü, yazılı veya elektronik ortamda toplanmaktadır. Bu veriler; KVKK m.5/2-c bendi uyarınca <em>"Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması"</em>, m.5/2-ç bendi uyarınca <em>"Veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi"</em> ve m.5/2-f bendi uyarınca <em>"İlgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla meşru menfaatlerimiz için veri işlenmesinin zorunlu olması"</em> hukuki sebeplerine dayalı olarak işlenir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">5. Kişisel Verilerin Aktarımı ve Amaçları</h4>
+          <p>
+            Toplanan kişisel verileriniz, yalnızca mevzuatın emrettiği hallerde ve yukarıda belirtilen amaçların gerçekleştirilmesi doğrultusunda; EPDK (Enerji Piyasası Düzenleme Kurumu), Organize Sanayi Bölge Müdürlükleri, ilgili ilçe ve büyükşehir belediyeleri, Çevre, Şehircilik ve İklim Değişikliği Bakanlığı taşra teşkilatları, bağımsız yapı denetim kuruluşları ve kanunen yetkili adli/idari merciler ile paylaşılabilecektir.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">6. KVKK'nın 11. Maddesi Uyarınca İlgili Kişinin Hakları</h4>
+          <p>Kişisel veri sahibi olarak Şirketimize başvurarak;</p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-300">
+            <li>Kişisel verinizin işlenip işlenmediğini öğrenme,</li>
+            <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+            <li>İşlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+            <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
+            <li>Eksik veya yanlış işlenmiş olması halinde bunların düzeltilmesini isteme,</li>
+            <li>KVKK m.7 çerçevesinde silinmesini veya yok edilmesini isteme,</li>
+            <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+            <li>Kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız halinde zararın giderilmesini talep etme haklarına sahipsiniz.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">7. Başvuru Usulü ve İletişim Kanalları</h4>
+          <p>
+            Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tevsik edici belgeler ile birlikte yazılı başvurunuzu <strong>Bandırma Caddesi No: 41/A, Karesi / Balıkesir</strong> adresine elden teslim edebilir, noter kanalıyla gönderebilir veya <strong>info@yurdanurkose.com</strong> adresine güvenli elektronik imza / mobil imza ile iletebilirsiniz. Başvurularınız en geç 30 (otuz) gün içerisinde ücretsiz olarak sonuçlandırılacaktır.
+          </p>
+        </div>
+
       </div>
-      <div class="pt-4 border-t border-white/10 text-right">
-        <button onclick="closeKvkkModal()" class="btn-minimal text-xs py-2 px-5 rounded">Kapat</button>
+
+      <div class="pt-5 border-t border-white/10 flex items-center justify-between">
+        <span class="text-[11px] font-mono text-slate-400">
+          Veri Sorumlusu: Yurdanur Köse Mimarlık İnşaat ve Ticaret Ltd. Şti.
+        </span>
+        <button onclick="closeKvkkModal()" class="btn-minimal text-xs py-2 px-6 rounded">
+          Kapat
+        </button>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 18. WHATSAPP TEKLİF BAŞARI BİLDİRİMİ -->
+  <!-- 17. WHATSAPP TEKLİF BAŞARI BİLDİRİMİ -->
   <!-- ========================================================================= -->
   <div id="proposal-success-modal" class="modal-backdrop">
     <div class="modal-panel max-w-md p-6 sm:p-8 text-center space-y-4">

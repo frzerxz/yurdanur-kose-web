@@ -1,5 +1,23 @@
 // Yurdanur Köse Mimarlık & İnşaat - 3D Editoryal Web Portalı
+
+// 0. SAYFA HER YENİLENDİĞİNDE (F5 / RELOAD) KESİNLİKLE EN BAŞA SAR
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
+// Eğer URL'de önceden kalmış bir # hash varsa (#teklif-formu vb.), temizle ve en tepeye odakla
+if (window.location.hash) {
+  history.replaceState(null, null, window.location.pathname + window.location.search);
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
   initThreeJsHero();
   initEditorialProjects();
   initFlowStream();
@@ -111,7 +129,6 @@ function initThreeJsHero() {
     requestAnimationFrame(animate);
     const elapsedTime = clock.getElapsedTime();
 
-    // Hafif otomatik salınım + fare takibi
     targetRotationY += (mouseX - targetRotationY) * 0.05;
     targetRotationX += (mouseY - targetRotationX) * 0.05;
 
@@ -137,7 +154,6 @@ function initEditorialProjects() {
   const container = document.getElementById("projects-editorial-grid");
   if (!container || typeof PROJECTS_DATA === "undefined") return;
 
-  // Asimetrik span şablonu: geniş (8), dar (4), yarım (6), yarım (6), dar (4), geniş (8)...
   const spans = [
     { span: "span-wide", height: "h-[480px] lg:h-[560px]" },
     { span: "span-narrow", height: "h-[360px] lg:h-[560px]" },
@@ -238,7 +254,7 @@ function openProjectModal(projectId) {
       </button>
     </div>
 
-    <!-- Büyük Ana Görsel (Stuart Tanner / Framerpanda stili) -->
+    <!-- Büyük Ana Görsel -->
     <div class="w-full h-[400px] sm:h-[480px] bg-slate-900 relative">
       <img src="${proj.coverImage}" alt="${proj.title}" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-[#14181E] via-transparent to-transparent"></div>
@@ -262,7 +278,7 @@ function openProjectModal(projectId) {
 
           <div class="p-4 rounded bg-white/[0.03] border-l-2 border-[#D4A373] text-xs text-slate-300 leading-relaxed font-sans">
             <span class="font-mono text-[#D4A373] uppercase tracking-wider block mb-1">
-              <i class="fa-brands fa-instagram mr-1"></i> Doğrulanmış Instagram Gönderi Açıklaması:
+              <i class="fa-solid fa-clipboard-check mr-1"></i> Proje Açıklaması:
             </span>
             "${proj.verifiedCaption}"
           </div>
@@ -274,7 +290,7 @@ function openProjectModal(projectId) {
           </div>
         </div>
 
-        <!-- Sağ: Teknik Detaylar Tablosu (Wilson stili) -->
+        <!-- Sağ: Teknik Detaylar Tablosu -->
         <div class="lg:col-span-5 bg-white/[0.02] border border-white/10 rounded-lg p-6 space-y-2">
           <h3 class="text-xs font-mono uppercase tracking-wider text-slate-400 pb-2 border-b border-white/10">
             Teknik Proje Künyesi
@@ -301,25 +317,23 @@ function closeProjectModal() {
   }
 }
 
-// 4. KESİNTİSİZ AKAN 3D FOTOĞRAF ŞERİDİ ("Görseller Aksın")
+// 4. KESİNTİSİZ AKAN 3D FOTOĞRAF ŞERİDİ ("Görseller Aksın" - Temiz, Yazısız Tasarım)
 function initFlowStream() {
   const trackLeft = document.getElementById("marquee-track-left");
   const trackRight = document.getElementById("marquee-track-right");
   if (!trackLeft || !trackRight || typeof FLOW_STREAM_PHOTOS === "undefined") return;
 
-  // Fotoğrafları iki şeride bölüştür
   const half = Math.ceil(FLOW_STREAM_PHOTOS.length / 2);
   const leftList = FLOW_STREAM_PHOTOS.slice(0, half);
   const rightList = FLOW_STREAM_PHOTOS.slice(half);
 
-  // Sonsuz döngü için ikişer kez ekle
+  // Kartların üzerinde "Büyütmek için tıkla" gibi ekstra yönlendirme yazısı YOKTUR (Kullanıcı Talebi)
   function renderCards(list) {
     return list.map(item => `
       <div class="marquee-card" onclick="openPhotoLightbox('${item.src}', '${item.title}')">
         <img src="${item.src}" alt="${item.title}" loading="lazy">
         <div class="marquee-card-overlay">
           <span class="text-xs font-heading font-semibold text-white drop-shadow">${item.title}</span>
-          <span class="text-[10px] text-[#D4A373] font-mono mt-0.5">Büyütmek için tıkla</span>
         </div>
       </div>
     `).join("");
@@ -351,41 +365,7 @@ function closePhotoLightbox() {
   }
 }
 
-// 6. DOĞRULANMIŞ GÖRSEL ENVANTERİ MODALI (GPT Önerisi: Sıfır Uydurma, Tam Şeffaflık)
-function openInventoryModal() {
-  const modal = document.getElementById("inventory-modal");
-  const tbody = document.getElementById("inventory-table-body");
-  if (!modal) return;
-
-  if (tbody && typeof PROJECTS_DATA !== "undefined") {
-    tbody.innerHTML = PROJECTS_DATA.map((p, idx) => `
-      <tr class="border-b border-white/5 hover:bg-white/[0.02] text-xs">
-        <td class="py-3 px-4 font-mono text-slate-400">#0${idx + 1}</td>
-        <td class="py-3 px-4">
-          <div class="w-14 h-14 rounded overflow-hidden bg-slate-900 cursor-pointer" onclick="openPhotoLightbox('${p.coverImage}', '${p.title}')">
-            <img src="${p.coverImage}" class="w-full h-full object-cover">
-          </div>
-        </td>
-        <td class="py-3 px-4 font-semibold text-white">${p.title}</td>
-        <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-white/5 text-[#D4A373] text-[10px] font-mono">${p.categoryLabel}</span></td>
-        <td class="py-3 px-4 text-slate-300 max-w-md">${p.verifiedCaption}</td>
-      </tr>
-    `).join("");
-  }
-
-  modal.classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-function closeInventoryModal() {
-  const modal = document.getElementById("inventory-modal");
-  if (modal) {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-}
-
-// 7. YASAL & STANDART MODALLARI
+// 6. YASAL & STANDART MODALLARI (EPDK, GİZLİLİK, KVKK)
 function openEpdkModal() {
   const m = document.getElementById("epdk-modal");
   if (m) { m.classList.add("active"); document.body.style.overflow = "hidden"; }
@@ -413,7 +393,7 @@ function closeKvkkModal() {
   if (m) { m.classList.remove("active"); document.body.style.overflow = ""; }
 }
 
-// 8. TEMİZ BEYAZ TEKLİF FORMU & WHATSAPP ENTEGRASYONU
+// 7. TEMİZ BEYAZ TEKLİF FORMU & WHATSAPP ENTEGRASYONU
 function initWhiteForm() {
   const form = document.getElementById("clean-proposal-form");
   if (!form) return;
@@ -455,7 +435,7 @@ function closeSuccessModal() {
   }
 }
 
-// 9. HEADER SCROLL & MOBİL MENÜ
+// 8. HEADER SCROLL & MOBİL MENÜ
 function initHeaderScroll() {
   const header = document.querySelector(".site-header");
   if (!header) return;
@@ -491,7 +471,6 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeProjectModal();
     closePhotoLightbox();
-    closeInventoryModal();
     closeEpdkModal();
     closePrivacyModal();
     closeKvkkModal();
