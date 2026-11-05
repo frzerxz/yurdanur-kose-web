@@ -1,7 +1,33 @@
 // Yurdanur Köse Mimarlık & İnşaat - Proje Veri Şeması
-// Tüm görseller yerel ve yüksek çözünürlüklü endüstriyel / akaryakıt projelerinden oluşur
+// Firma Orijinal OSB Projeleri ve Akaryakıt Taahhüt Portföyü
 
 const PROJECTS_DATA = [
+  {
+    id: "proj-lansman",
+    title: "Balıkesir OSB Ticari Dükkanlar & Depolama Tesisleri",
+    slug: "balikesir-osb-ticari-depolama",
+    category: "endustriyel",
+    categoryLabel: "OSB Ticari & Depo",
+    status: "tamamlandi",
+    statusLabel: "Lansman Yapıldı",
+    location: "Balıkesir Organize Sanayi Bölgesi",
+    areaSquareMeters: 18500,
+    structureType: "Ağır Çelik & Modüler Karkas",
+    deliveryTimeMonths: 8,
+    clientOrBrand: "Balıkesir OSB Yatırımı",
+    coverImage: "assets/images/osb-ticari-lansman.jpg",
+    galleryImages: [
+      "assets/images/osb-ticari-lansman.jpg",
+      "assets/images/fabrika-1.jpg"
+    ],
+    scopeSummary: "Balıkesir Organize Sanayi Bölgesi'nde sanayici ve lojistik firmaları için modüler ticari dükkanlar, depolama alanları, ağır tonajlı zemin ve geniş araç yanaşma manevra sahaları projelendirilip başarıyla teslim edilmiştir.",
+    technicalSpecs: {
+      craneCapacityTon: 10,
+      floorLoadCapacityKgM2: 7500,
+      substationKva: 2000,
+      canopyHeightMeters: null
+    }
+  },
   {
     id: "proj-1",
     title: "Balıkesir OSB Ağır Sanayi & Fabrika Tesisi",
@@ -132,37 +158,17 @@ const PROJECTS_DATA = [
       substationKva: 315,
       canopyHeightMeters: 5.2
     }
-  },
-  {
-    id: "proj-6",
-    title: "Balıkesir OSB Endüstriyel İmalat & Depo Kampüsü",
-    slug: "balikesir-osb-endustriyel-kampus",
-    category: "endustriyel",
-    categoryLabel: "OSB Fabrika",
-    status: "devam-ediyor",
-    statusLabel: "Devam Eden Şantiye",
-    location: "Balıkesir OSB 2. Etap",
-    areaSquareMeters: 11800,
-    structureType: "Ağır Çelik Konstrüksiyon",
-    deliveryTimeMonths: 6,
-    clientOrBrand: "Özel Sanayici",
-    coverImage: "assets/images/fabrika-3.jpg",
-    galleryImages: [
-      "assets/images/fabrika-3.jpg",
-      "assets/images/fabrika-2.jpg"
-    ],
-    scopeSummary: "Ağır makine parkuru için titreşim sönümlemeli zemin temelleri, 20 ton vinç kirişleri ve çatı GES panelleri taşıyıcı projesi.",
-    technicalSpecs: {
-      craneCapacityTon: 20,
-      floorLoadCapacityKgM2: 8500,
-      substationKva: 2500,
-      canopyHeightMeters: null
-    }
   }
 ];
 
 // Firma Sosyal Medya & Şantiye Galerisi Görselleri
 const SOCIAL_GALLERY = [
+  {
+    img: "assets/images/osb-ticari-lansman.jpg",
+    title: "Balıkesir OSB Ticari & Depolama Lansman Satışı",
+    category: "OSB Projesi",
+    badge: "Lansman"
+  },
   {
     img: "assets/images/fabrika-1.jpg",
     title: "Balıkesir OSB Çelik Makas Montajı",
@@ -186,12 +192,6 @@ const SOCIAL_GALLERY = [
     title: "Lojistik Depo & Yükleme Rampaları",
     category: "Lojistik Tesis",
     badge: "Antrepo"
-  },
-  {
-    img: "assets/images/fabrika-3.jpg",
-    title: "Ağır Sanayi Çatı ve Vinç Yolları",
-    category: "Ağır Sanayi",
-    badge: "Statik İmalat"
   },
   {
     img: "assets/images/akaryakit-2.jpg",

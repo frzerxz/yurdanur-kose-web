@@ -49,7 +49,7 @@ function initCounters() {
   }
 }
 
-// 2. Proje Filtreleme & Kart Render (Kurumsal Mimari Tasarım)
+// 2. Proje Filtreleme & Kart Render
 function initProjectsFilter() {
   const filterBtns = document.querySelectorAll(".filter-btn");
 
@@ -83,7 +83,7 @@ function renderProjects(filter) {
 
   container.innerHTML = filtered.map((proj) => `
     <div class="project-card rounded-xl overflow-hidden flex flex-col group cursor-pointer shadow-lg" onclick="openProjectModal('${proj.id}')">
-      <!-- Görsel Alanı (16:9) -->
+      <!-- Görsel Alanı (16:10) -->
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-slate-900">
         <img src="${proj.coverImage}" alt="${proj.title}" class="img-zoom w-full h-full object-cover">
         
@@ -98,7 +98,7 @@ function renderProjects(filter) {
             </span>
           ` : `
             <span class="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-500/90 text-white">
-              Teslim Edildi
+              ${proj.statusLabel}
             </span>
           `}
         </div>
@@ -198,7 +198,6 @@ window.openProjectModal = function(projectId) {
 
     <!-- Body -->
     <div class="p-6 md:p-8 space-y-6">
-      <!-- Künye Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-900 p-4 rounded-xl border border-slate-800 text-center">
         <div class="p-2 border-r border-slate-800 last:border-none">
           <div class="text-xs text-slate-400 mb-1">Toplam Alan</div>
@@ -218,7 +217,6 @@ window.openProjectModal = function(projectId) {
         </div>
       </div>
 
-      <!-- Kapsam -->
       <div>
         <h4 class="text-sm font-bold font-heading text-white uppercase tracking-wider mb-2 flex items-center gap-2">
           <i class="fa-solid fa-circle-check text-amber-400"></i> Mühendislik Kapsamı & Uygulama Detayları
@@ -228,7 +226,6 @@ window.openProjectModal = function(projectId) {
         </p>
       </div>
 
-      <!-- Teknik Parametreler -->
       <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
         <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Statik ve Altyapı Verileri</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
@@ -279,7 +276,6 @@ window.openProjectModal = function(projectId) {
         </div>
       </div>
 
-      <!-- Aksiyon Butonları -->
       <div class="flex flex-col sm:flex-row gap-3 pt-2">
         <a href="#teklif-formu" onclick="closeProjectModal(); selectFormProjectType('${project.category === 'akaryakit' ? 'Akaryakıt İstasyonu' : 'OSB Fabrika & Depo'}');" class="btn-amber flex-1 py-3 px-5 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2">
           <i class="fa-solid fa-paper-plane"></i> Bu Kapsam İçin Teklif Al
@@ -303,7 +299,56 @@ window.closeProjectModal = function() {
   }
 };
 
-// 5. Temiz Beyaz Seçimli Form Mantığı
+// 5. Yasal & Güvenlik Modalları (EPDK, Gizlilik, KVKK)
+window.openEpdkModal = function() {
+  const modal = document.getElementById("epdk-modal");
+  if (modal) {
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+};
+
+window.closeEpdkModal = function() {
+  const modal = document.getElementById("epdk-modal");
+  if (modal) {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+};
+
+window.openPrivacyModal = function() {
+  const modal = document.getElementById("privacy-modal");
+  if (modal) {
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+};
+
+window.closePrivacyModal = function() {
+  const modal = document.getElementById("privacy-modal");
+  if (modal) {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+};
+
+window.openKvkkModal = function() {
+  const modal = document.getElementById("kvkk-modal");
+  if (modal) {
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+};
+
+window.closeKvkkModal = function() {
+  const modal = document.getElementById("kvkk-modal");
+  if (modal) {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+};
+
+// 6. Temiz Beyaz Seçimli Form Mantığı
 let selectedProjectType = "OSB Fabrika & Depo";
 
 function initWhiteForm() {
@@ -358,7 +403,6 @@ function handleWhiteFormSubmit() {
   const encodedMsg = encodeURIComponent(message);
   const waUrl = `https://wa.me/902662439665?text=${encodedMsg}`;
 
-  // Başarı Modalı Aç
   const modalSuccess = document.getElementById("proposal-success-modal");
   const waLinkBtn = document.getElementById("success-wa-link");
   if (waLinkBtn) {
@@ -376,7 +420,7 @@ window.closeSuccessModal = function() {
   }
 };
 
-// 6. Mobil Menü & Header Scroll
+// 7. Mobil Menü & Header Scroll
 function initMobileMenu() {
   const toggleBtn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
