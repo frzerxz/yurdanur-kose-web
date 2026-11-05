@@ -1,18 +1,18 @@
-/* Yurdanur Köse Mimarlık & İnşaat - Kurumsal Prestij & Endüstriyel Mimari Tasarım Sistemi */
+/* Yurdanur Köse Mimarlık & İnşaat - 3D Web Sitesi ve Kurumsal Mimari Tasarım Sistemi */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-primary: #14171A;
-  --bg-card: #1E2227;
-  --bg-card-hover: #262B32;
+  --bg-primary: #0F1215;
+  --bg-card: #181C21;
+  --bg-card-hover: #22272E;
   --accent-amber: #F59E0B;
   --accent-amber-dark: #D97706;
-  --accent-amber-glow: rgba(245, 158, 11, 0.25);
-  --accent-blue: #0284C7;
-  --accent-blue-light: #38BDF8;
+  --accent-amber-glow: rgba(245, 158, 11, 0.35);
+  --accent-cyan: #06B6D4;
+  --accent-cyan-glow: rgba(6, 182, 212, 0.3);
   --text-white: #FFFFFF;
   --text-slate: #94A3B8;
-  --border-dark: #2A3038;
+  --border-dark: #272E38;
 }
 
 * {
@@ -34,72 +34,162 @@ body {
   line-height: 1.6;
 }
 
-/* Headings with Outfit - Prestigious, Modern, Architectural */
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.02em;
 }
 
-/* Standard Clean Sans for UI & Badges */
-.font-sans, .tech-badge {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+/* 3D Hero Three.js Canvas Container */
+#hero-3d-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  z-index: 1;
 }
 
-/* Clean Cards with Subtle Elevation */
-.prestige-card {
+#hero-3d-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 3D Tilt Card Base */
+.card-3d-wrap {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.card-3d-element {
   position: relative;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-dark);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
-.prestige-card:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.5);
-  transform: translateY(-4px);
+.card-3d-element:hover {
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-amber-glow);
 }
 
-/* Project Card Hover */
-.project-card {
-  position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--border-dark);
+.card-3d-depth {
+  transform: translateZ(30px);
+}
+
+/* "Görseller Aksın" - 3D Infinite Flowing Marquee */
+.flow-marquee-viewport {
+  width: 100%;
   overflow: hidden;
-  transition: all 0.35s ease;
+  position: relative;
+  padding: 1.5rem 0;
+  perspective: 1400px;
 }
 
-.project-card .img-zoom {
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+.flow-marquee-viewport::before,
+.flow-marquee-viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 10;
+  pointer-events: none;
 }
 
-.project-card:hover .img-zoom {
-  transform: scale(1.08);
+.flow-marquee-viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #0F1215 0%, transparent 100%);
 }
 
-.project-card:hover {
+.flow-marquee-viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #0F1215 0%, transparent 100%);
+}
+
+.flow-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: marqueeFlow 42s linear infinite;
+  transform: rotateX(2deg) rotateY(-2deg);
+}
+
+.flow-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.flow-marquee-track-reverse {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: marqueeFlowReverse 45s linear infinite;
+  transform: rotateX(-2deg) rotateY(2deg);
+}
+
+.flow-marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeFlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeFlowReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.flow-photo-card {
+  width: 280px;
+  height: 280px;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border-dark);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.flow-photo-card:hover {
+  transform: translateY(-8px) scale(1.04);
   border-color: var(--accent-amber);
-  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 16px 36px -10px var(--accent-amber-glow);
+  z-index: 5;
 }
 
-/* Amber Glowing Button */
+.flow-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.flow-photo-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Buttons */
 .btn-amber {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
   color: #FFFFFF;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 16px var(--accent-amber-glow);
+  box-shadow: 0 4px 18px var(--accent-amber-glow);
 }
 
 .btn-amber:hover {
   background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.5);
   transform: translateY(-2px);
 }
 
-/* Corporate Outline Button */
 .btn-outline-light {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
   font-weight: 600;
   transition: all 0.25s ease;
@@ -107,21 +197,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .btn-outline-light:hover {
   background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
   transform: translateY(-2px);
-}
-
-/* Hero Gradient Overlay */
-.hero-gradient {
-  background: linear-gradient(180deg, rgba(20, 23, 26, 0.85) 0%, rgba(20, 23, 26, 0.6) 50%, rgba(20, 23, 26, 0.98) 100%);
 }
 
 /* Clean White Form Styling */
 .white-form-card {
   background: #FFFFFF;
   color: #1E293B;
-  border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  border-radius: 1.75rem;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(226, 232, 240, 0.8);
 }
 
 .form-select-pill {
@@ -141,15 +227,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-color: #D97706;
   background: #FEF3C7;
   color: #92400E;
-  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.2);
 }
 
 .form-input-clean {
   background: #F8FAFC;
   border: 1.5px solid #E2E8F0;
   color: #0F172A;
-  border-radius: 0.6rem;
-  padding: 0.75rem 1rem;
+  border-radius: 0.65rem;
+  padding: 0.8rem 1rem;
   font-size: 0.875rem;
   transition: all 0.2s ease;
 }
@@ -158,7 +244,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   outline: none;
   background: #FFFFFF;
   border-color: #D97706;
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.18);
 }
 
 /* Modal Transitions */
@@ -180,7 +266,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   transform: scale(1) translateY(0);
 }
 
-/* Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

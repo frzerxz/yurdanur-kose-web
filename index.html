@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yurdanur Köse Mimarlık & İnşaat | Sanayi Yapıları & Akaryakıt Taahhüdü</title>
+  <title>Yurdanur Köse Mimarlık & İnşaat | 3D Sanayi & Akaryakıt Taahhüdü</title>
   
   <!-- SEO & Meta Tags -->
-  <meta name="description" content="Balıkesir ve çevre OSB'lerde anahtar teslim ağır çelik fabrika, lojistik depo ve Petrol Ofisi standartlarında akaryakıt istasyonu inşası. EPDK & İSG mevzuat güvencesi.">
-  <meta name="keywords" content="yurdanur köse, mimarlık, inşaat, organize sanayi bölgesi, osb fabrika inşaatı, akaryakıt istasyonu taahhüt, petrol ofisi istasyon inşaatı, balıkesir çelik konstrüksiyon">
+  <meta name="description" content="Balıkesir ve çevre OSB'lerde anahtar teslim ağır çelik fabrika, lojistik depo ve akaryakıt istasyonu inşası. 3D interaktif mimari taahhüt portalı.">
+  <meta name="keywords" content="yurdanur köse, mimarlık, inşaat, organize sanayi bölgesi, osb fabrika inşaatı, akaryakıt istasyonu taahhüt, 3d mimari, balıkesir çelik konstrüksiyon">
   <meta name="author" content="Yurdanur Köse Mimarlık İnşaat ve Ticaret Ltd. Şti.">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yurdanurkose.com/">
-  <meta property="og:title" content="Yurdanur Köse Mimarlık & İnşaat | Sanayi & Akaryakıt Taahhüdü">
+  <meta property="og:title" content="Yurdanur Köse Mimarlık & İnşaat | 3D Sanayi & Akaryakıt Taahhüdü">
   <meta property="og:description" content="Ağır sanayi, sarsılmaz mühendislik disiplini, EPDK & İSG mevzuat güveni ile anahtar teslim endüstriyel tesisler.">
-  <meta property="og:image" content="assets/images/fabrika-1.jpg">
+  <meta property="og:image" content="assets/images/instagram/insta-06.jpg">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -26,7 +26,7 @@
     "name": "Yurdanur Köse Mimarlık İnşaat ve Ticaret Ltd. Şti.",
     "alternateName": "Yurdanur Köse Sanayi & Akaryakıt Taahhüt",
     "url": "https://yurdanurkose.com",
-    "image": "assets/images/fabrika-1.jpg",
+    "image": "assets/images/instagram/insta-06.jpg",
     "telephone": "+90-266-243-96-65",
     "email": "info@yurdanurkose.com",
     "address": {
@@ -52,12 +52,12 @@
         extend: {
           colors: {
             brand: {
-              dark: '#14171A',
-              card: '#1E2227',
-              cardHover: '#262B32',
+              dark: '#0F1215',
+              card: '#181C21',
+              cardHover: '#22272E',
               amber: '#F59E0B',
               amberDark: '#D97706',
-              blue: '#0284C7'
+              cyan: '#06B6D4'
             }
           },
           fontFamily: {
@@ -69,7 +69,7 @@
     }
   </script>
 
-  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -77,18 +77,21 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Three.js 3D WebGL Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#14171A] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-900">
+<body class="bg-[#0F1215] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
 
   <!-- 1. HEADER (Sabit / Sticky Navigasyon) -->
-  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8 border-b border-slate-800/80 bg-[#14171A]/90 backdrop-blur-md">
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8 border-b border-slate-800/80 bg-[#0F1215]/90 backdrop-blur-md">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Sol: Şirket Logosu -->
       <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 font-heading font-extrabold text-xl flex items-center justify-center shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 font-heading font-extrabold text-xl flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
           YK
         </div>
         <div class="flex flex-col">
@@ -106,7 +109,7 @@
         <a href="#hakkimizda" class="hover:text-amber-400 transition-colors py-1">Kurumsal</a>
         <a href="#uzmanliklar" class="hover:text-amber-400 transition-colors py-1">Uzmanlıklar</a>
         <a href="#projeler" class="hover:text-amber-400 transition-colors py-1">Projeler</a>
-        <a href="#galeri" class="hover:text-amber-400 transition-colors py-1">Şantiye Galerisi</a>
+        <a href="#flow-stream" class="hover:text-amber-400 transition-colors py-1">Canlı Akış</a>
         <a href="#standartlar" class="hover:text-amber-400 transition-colors py-1">Standartlar</a>
         <a href="#subeler" class="hover:text-amber-400 transition-colors py-1">Şubelerimiz</a>
       </nav>
@@ -114,7 +117,7 @@
       <!-- Sağ Butonlar -->
       <div class="hidden sm:flex items-center gap-5">
         <a href="tel:02662439665" class="text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-2">
-          <span class="w-7 h-7 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center">
+          <span class="w-8 h-8 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center shadow-inner">
             <i class="fa-solid fa-phone text-xs"></i>
           </span>
           <span>0266 243 96 65</span>
@@ -133,12 +136,12 @@
     </div>
 
     <!-- Mobil Açılır Menü -->
-    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-800 bg-[#14171A] rounded-b-2xl">
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-800 bg-[#0F1215] rounded-b-2xl">
       <div class="flex flex-col gap-3 text-sm font-medium px-4 py-3">
         <a href="#hakkimizda" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">Kurumsal & Saha Disiplini</a>
         <a href="#uzmanliklar" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">Temel Uzmanlık Alanları</a>
         <a href="#projeler" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">Projeler Vitrini</a>
-        <a href="#galeri" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">Şantiye & Sosyal Medya Galerisi</a>
+        <a href="#flow-stream" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">Canlı 3D Fotoğraf Akışı</a>
         <a href="#standartlar" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">EPDK & İSG Standartları</a>
         <a href="#subeler" class="mobile-nav-link text-slate-300 hover:text-amber-400 py-2">Şubelerimiz & Lokasyonlar</a>
         <a href="#teklif-formu" class="mobile-nav-link btn-amber text-center py-3 rounded-xl mt-2 font-bold">
@@ -148,18 +151,27 @@
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
-  <section class="relative min-h-[90vh] flex items-center pt-28 pb-16 bg-[#14171A] overflow-hidden border-b border-slate-800">
-    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('assets/images/fabrika-1.jpg');"></div>
-    <div class="hero-gradient absolute inset-0 pointer-events-none"></div>
+  <!-- 2. HERO SECTION (THREE.JS 3D MİMARİ SAHNE VE ETKİLEŞİM) -->
+  <section class="relative min-h-[92vh] flex items-center pt-28 pb-16 bg-[#0F1215] overflow-hidden border-b border-slate-800">
+    
+    <!-- Three.js 3D Interactive WebGL Canvas Container -->
+    <div id="hero-3d-canvas-container">
+      <canvas id="hero-3d-canvas"></canvas>
+    </div>
+
+    <!-- Vignette Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0F1215] via-[#0F1215]/80 to-transparent pointer-events-none z-[2]"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0F1215] via-transparent to-transparent pointer-events-none z-[2]"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
+        <!-- Sol: Tipografi & CTA'lar -->
         <div class="lg:col-span-8 space-y-6">
+          
           <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-300 text-xs font-semibold backdrop-blur-md shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            <span>Organize Sanayi Tesisleri & Akaryakıt İstasyonları Taahhüdü</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+            <span>3D İnteraktif Mimarlık & Organize Sanayi Taahhüdü</span>
           </div>
 
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.12]">
@@ -170,25 +182,32 @@
           </h1>
 
           <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
-            Balıkesir ve çevre OSB'lerde anahtar teslim ağır çelik fabrika, lojistik depo ve Petrol Ofisi standartlarında akaryakıt istasyonu inşası. Projelendirmeden iskâna sıfır hata toleransı.
+            Balıkesir ve çevre OSB'lerde anahtar teslim ağır çelik fabrika, lojistik depo ve akaryakıt istasyonu inşası. Projelendirmeden iskâna sıfır hata toleransı.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 pt-3">
             <a href="#projeler" class="btn-outline-light py-3.5 px-7 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2.5">
-              <i class="fa-solid fa-layer-group text-amber-400"></i>
-              <span>Projelerimizi İnceleyin</span>
+              <i class="fa-solid fa-cube text-amber-400"></i>
+              <span>Projeleri İnceleyin</span>
             </a>
-            <a href="#teklif-formu" class="btn-amber py-3.5 px-7 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2.5">
-              <i class="fa-solid fa-file-signature"></i>
-              <span>Hızlı Keşif ve Teklif Al</span>
+            <a href="#flow-stream" class="btn-amber py-3.5 px-7 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2.5">
+              <i class="fa-solid fa-play"></i>
+              <span>Canlı Şantiye Akışını İzle</span>
             </a>
           </div>
+
+          <div class="pt-4 text-xs text-slate-400 flex items-center gap-2 font-medium">
+            <i class="fa-solid fa-computer-mouse text-cyan-400 animate-bounce"></i>
+            <span>3D İskelet İle Etkileşim: Fareyi ekranda hareket ettirerek 3D sahneyi döndürün</span>
+          </div>
+
         </div>
 
-        <div class="lg:col-span-4">
-          <div class="prestige-card p-7 rounded-2xl bg-[#1E2227]/95 backdrop-blur-md border border-slate-700/80 shadow-2xl">
+        <!-- Sağ: Prestijli Kurumsal Güven Paneli (3D Tiltli) -->
+        <div class="lg:col-span-4 card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl bg-[#181C21]/95 backdrop-blur-md border border-slate-700/80 shadow-2xl">
             <div class="flex items-center justify-between pb-4 border-b border-slate-700/60 text-xs font-bold text-amber-400 uppercase tracking-wider">
-              <span>Kurumsal Yetkinlik</span>
+              <span>3D Mühendislik Portalı</span>
               <span class="text-emerald-400 flex items-center gap-1">
                 <i class="fa-solid fa-circle-check"></i> Doğrulanmış
               </span>
@@ -231,44 +250,88 @@
     </div>
   </section>
 
+  <!-- 3. "GÖRSELLER AKSIN" - SÜREKLİ AKAN 3D CANLI FOTOĞRAF AKIŞI (#flow-stream) -->
+  <section id="flow-stream" class="py-20 bg-[#0F1215] relative border-b border-slate-800 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-film"></i> Kesintisiz Görsel Akışı
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-white">
+          Şantiyelerimizden & Instagram Arşivimizden Canlı Kareler
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">
+          Fotoğraflar sürekli akmaktadır; fareyle üzerine gelerek durdurabilir, tıklayarak yüksek çözünürlükte inceleyebilirsiniz.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" rel="noopener noreferrer" class="py-2.5 px-5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-xs font-bold flex items-center gap-2 shadow-lg transition-transform hover:scale-105">
+          <i class="fa-brands fa-instagram text-sm"></i>
+          <span>@yurdanurkosemimarlik</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 1. Akan Şerit (Sola Doğru Akış) -->
+    <div class="flow-marquee-viewport">
+      <div id="flow-track-1" class="flow-marquee-track">
+        <!-- JS ile 41 Instagram fotoğrafı doldurulur -->
+      </div>
+    </div>
+
+    <!-- 2. Akan Şerit (Sağa Doğru Ters Akış) -->
+    <div class="flow-marquee-viewport mt-2">
+      <div id="flow-track-2" class="flow-marquee-track-reverse">
+        <!-- JS ile 41 Instagram fotoğrafı ters doldurulur -->
+      </div>
+    </div>
+  </section>
+
   <!-- SAYAÇ KARTLARI BANDI (#stats-band) -->
-  <section id="stats-band" class="bg-[#1E2227] border-b border-slate-800 py-10 relative">
+  <section id="stats-band" class="bg-[#181C21] border-b border-slate-800 py-10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="prestige-card p-6 rounded-2xl text-center bg-[#14171A]">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mx-auto mb-3">
-            <i class="fa-solid fa-ruler-combined"></i>
-          </div>
-          <div class="stat-counter text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1" data-target="150000" data-prefix="+">
-            +150.000 m²
-          </div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-            Tamamlanan Sanayi & Tesis Alanı
-          </div>
-        </div>
-
-        <div class="prestige-card p-6 rounded-2xl text-center bg-[#14171A]">
-          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mx-auto mb-3">
-            <i class="fa-solid fa-industry"></i>
-          </div>
-          <div class="stat-counter text-3xl sm:text-4xl font-extrabold font-heading text-sky-400 mb-1" data-target="14" data-suffix="+">
-            14+
-          </div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-            Anahtar Teslim Fabrika & İstasyon
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-6 rounded-2xl text-center bg-[#0F1215] border border-slate-800">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mx-auto mb-3">
+              <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <div class="stat-counter text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1" data-target="150000" data-prefix="+">
+              +150.000 m²
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              Tamamlanan Sanayi & Tesis Alanı
+            </div>
           </div>
         </div>
 
-        <div class="prestige-card p-6 rounded-2xl text-center bg-[#14171A]">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mx-auto mb-3">
-            <i class="fa-solid fa-shield-check"></i>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-6 rounded-2xl text-center bg-[#0F1215] border border-slate-800">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mx-auto mb-3">
+              <i class="fa-solid fa-industry"></i>
+            </div>
+            <div class="stat-counter text-3xl sm:text-4xl font-extrabold font-heading text-cyan-400 mb-1" data-target="14" data-suffix="+">
+              14+
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              Anahtar Teslim Fabrika & İstasyon
+            </div>
           </div>
-          <div class="stat-counter text-3xl sm:text-4xl font-extrabold font-heading text-emerald-400 mb-1" data-target="100" data-prefix="%">
-            %100
-          </div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-            EPDK, İSG ve Yangın Mevzuatı Uyumu
+        </div>
+
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-6 rounded-2xl text-center bg-[#0F1215] border border-slate-800">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mx-auto mb-3">
+              <i class="fa-solid fa-shield-check"></i>
+            </div>
+            <div class="stat-counter text-3xl sm:text-4xl font-extrabold font-heading text-emerald-400 mb-1" data-target="100" data-prefix="%">
+              %100
+            </div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              EPDK, İSG ve Yangın Mevzuatı Uyumu
+            </div>
           </div>
         </div>
 
@@ -276,17 +339,17 @@
     </div>
   </section>
 
-  <!-- 3. KURUMSAL GÜVEN & SAHA DİSİPLİNİ (#hakkimizda) -->
-  <section id="hakkimizda" class="py-24 bg-[#14171A] relative border-b border-slate-800">
+  <!-- 4. KURUMSAL GÜVEN & SAHA DİSİPLİNİ (#hakkimizda) -->
+  <section id="hakkimizda" class="py-24 bg-[#0F1215] relative border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <div class="lg:col-span-6 relative">
-          <div class="relative rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 group shadow-2xl">
-            <img src="assets/images/fabrika-2.jpg" alt="Yurdanur Köse Şantiye ve Saha Uygulaması" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="lg:col-span-6 card-3d-wrap">
+          <div class="card-3d-element relative rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 group shadow-2xl">
+            <img src="assets/images/instagram/insta-06.jpg" alt="Yurdanur Köse Şantiye ve Saha Uygulaması" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
             
-            <div class="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-[#1E2227]/95 border border-slate-700 backdrop-blur-md">
+            <div class="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-[#181C21]/95 border border-slate-700 backdrop-blur-md">
               <div class="flex items-center gap-3.5">
                 <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
                   <i class="fa-solid fa-hard-hat"></i>
@@ -322,20 +385,20 @@
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 text-xs">
-            <div class="p-4 bg-[#1E2227] rounded-xl border border-slate-700/80">
+            <div class="p-4 bg-[#181C21] rounded-xl border border-slate-700/80">
               <span class="text-amber-400 block font-bold text-sm mb-1">01. Bürokratik Hız</span>
               <span class="text-slate-400">ÇED, imar ve ruhsat süreçlerinde sıfır gecikmeli onay takibi.</span>
             </div>
-            <div class="p-4 bg-[#1E2227] rounded-xl border border-slate-700/80">
-              <span class="text-sky-400 block font-bold text-sm mb-1">02. Statik Güvenlik</span>
+            <div class="p-4 bg-[#181C21] rounded-xl border border-slate-700/80">
+              <span class="text-cyan-400 block font-bold text-sm mb-1">02. Statik Güvenlik</span>
               <span class="text-slate-400">Deprem yönetmeliğine tam uyumlu ağır çelik ve prefabrik karkas.</span>
             </div>
-            <div class="p-4 bg-[#1E2227] rounded-xl border border-slate-700/80">
+            <div class="p-4 bg-[#181C21] rounded-xl border border-slate-700/80">
               <span class="text-amber-400 block font-bold text-sm mb-1">03. ATEX & Yangın</span>
               <span class="text-slate-400">Akaryakıt kanopi ve tanklarında ex-proof güvenlik altyapısı.</span>
             </div>
-            <div class="p-4 bg-[#1E2227] rounded-xl border border-slate-700/80">
-              <span class="text-sky-400 block font-bold text-sm mb-1">04. Zamanında Teslim</span>
+            <div class="p-4 bg-[#181C21] rounded-xl border border-slate-700/80">
+              <span class="text-cyan-400 block font-bold text-sm mb-1">04. Zamanında Teslim</span>
               <span class="text-slate-400">CPM iş programı disipliniyle cezai şarta girmeden teslimat.</span>
             </div>
           </div>
@@ -345,8 +408,8 @@
     </div>
   </section>
 
-  <!-- 4. TEMEL UZMANLIK ALANLARI (#uzmanliklar) -->
-  <section id="uzmanliklar" class="py-24 bg-[#14171A] relative border-b border-slate-800">
+  <!-- 5. TEMEL UZMANLIK ALANLARI (#uzmanliklar) -->
+  <section id="uzmanliklar" class="py-24 bg-[#0F1215] relative border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <div class="max-w-3xl mb-16 space-y-3">
@@ -363,144 +426,152 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div class="prestige-card p-7 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-5">
-              <i class="fa-solid fa-industry"></i>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl flex flex-col justify-between bg-[#181C21] border border-slate-700/80 h-full">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+              <h3 class="text-lg font-bold font-heading text-white mb-3">
+                Endüstriyel Tesisler & Fabrikalar
+              </h3>
+              <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Ağır çelik konstrüksiyon imalatı</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Prefabrik betonarme karkas</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Endüstriyel zemin betonları</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Gezer köprülü vinç yolları</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-lg font-bold font-heading text-white mb-3">
-              Endüstriyel Tesisler & Fabrikalar
-            </h3>
-            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Ağır çelik konstrüksiyon imalatı</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Prefabrik betonarme karkas</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Endüstriyel zemin betonları</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Gezer köprülü vinç yolları</span>
-              </li>
-            </ul>
+            <a href="#teklif-formu" onclick="selectFormProjectType('OSB Fabrika & Depo')" class="text-xs font-bold text-amber-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
+              <span>Fabrika Keşfi İste</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-          <a href="#teklif-formu" onclick="selectFormProjectType('OSB Fabrika & Depo')" class="text-xs font-bold text-amber-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
-            <span>Fabrika Keşfi İste</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
         </div>
 
-        <div class="prestige-card p-7 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5">
-              <i class="fa-solid fa-gas-pump"></i>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl flex flex-col justify-between bg-[#181C21] border border-slate-700/80 h-full">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-gas-pump"></i>
+              </div>
+              <h3 class="text-lg font-bold font-heading text-white mb-3">
+                Akaryakıt & LPG İstasyonları
+              </h3>
+              <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>Dağıtıcı kurumsal kimlik montajı</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>Kanopi imalatı ve dolum adaları</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>İdari bina, market ve oto yıkama</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>ATEX ex-proof elektrik altyapısı</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-lg font-bold font-heading text-white mb-3">
-              Akaryakıt & LPG İstasyonları
-            </h3>
-            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>Dağıtıcı kurumsal kimlik (Petrol Ofisi vb.)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>Kanopi imalatı ve dolum adaları</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>İdari bina, market ve oto yıkama</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>ATEX ex-proof elektrik altyapısı</span>
-              </li>
-            </ul>
+            <a href="#teklif-formu" onclick="selectFormProjectType('Akaryakıt İstasyonu')" class="text-xs font-bold text-cyan-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
+              <span>İstasyon Projesi İste</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-          <a href="#teklif-formu" onclick="selectFormProjectType('Akaryakıt İstasyonu')" class="text-xs font-bold text-sky-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
-            <span>İstasyon Projesi İste</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
         </div>
 
-        <div class="prestige-card p-7 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-5">
-              <i class="fa-solid fa-building"></i>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl flex flex-col justify-between bg-[#181C21] border border-slate-700/80 h-full">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <h3 class="text-lg font-bold font-heading text-white mb-3">
+                OSB İdari & Sosyal Yapılar
+              </h3>
+              <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Fabrika içi ergonomik ofisler</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Yemekhane & sosyal yaşam alanları</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Ar-Ge ve laboratuvar binaları</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                  <span>Kompozit cephe ve estetik giydirme</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-lg font-bold font-heading text-white mb-3">
-              OSB İdari & Sosyal Yapılar
-            </h3>
-            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Fabrika içi ergonomik ofisler</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Yemekhane & sosyal yaşam alanları</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Ar-Ge ve laboratuvar binaları</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
-                <span>Kompozit cephe ve estetik giydirme</span>
-              </li>
-            </ul>
+            <a href="#teklif-formu" onclick="selectFormProjectType('İdari Bina & Tesis')" class="text-xs font-bold text-amber-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
+              <span>İdari Bina Planla</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-          <a href="#teklif-formu" onclick="selectFormProjectType('İdari Bina & Tesis')" class="text-xs font-bold text-amber-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
-            <span>İdari Bina Planla</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
         </div>
 
-        <div class="prestige-card p-7 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5">
-              <i class="fa-solid fa-file-contract"></i>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl flex flex-col justify-between bg-[#181C21] border border-slate-700/80 h-full">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-file-contract"></i>
+              </div>
+              <h3 class="text-lg font-bold font-heading text-white mb-3">
+                Mevzuat & Ruhsat Yönetimi
+              </h3>
+              <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>İmar durumu ve parselasyon takibi</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>ÇED muafiyeti ve çevre izinleri</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>Mimari-statik koordinasyon projeleri</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
+                  <span>İskân (yapı kullanma) izinleri</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-lg font-bold font-heading text-white mb-3">
-              Mevzuat & Ruhsat Yönetimi
-            </h3>
-            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>İmar durumu ve parselasyon takibi</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>ÇED muafiyeti ve çevre izinleri</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>Mimari-statik koordinasyon projeleri</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
-                <span>İskân (yapı kullanma) izinleri</span>
-              </li>
-            </ul>
+            <a href="#teklif-formu" onclick="selectFormProjectType('Ruhsat & Danışmanlık')" class="text-xs font-bold text-cyan-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
+              <span>Mevzuat Danışmanlığı</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-          <a href="#teklif-formu" onclick="selectFormProjectType('Ruhsat & Danışmanlık')" class="text-xs font-bold text-sky-400 hover:text-white flex items-center gap-2 transition-colors pt-3 border-t border-slate-700/60">
-            <span>Mevzuat Danışmanlığı</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 5. BÖLÜM: PROJELER VİTRİNİ & FİLTRELEME (#projeler) -->
-  <section id="projeler" class="py-24 bg-[#14171A] relative border-b border-slate-800">
+  <!-- 6. BÖLÜM: PROJELER VİTRİNİ & 3D KARTLAR (#projeler) -->
+  <section id="projeler" class="py-24 bg-[#0F1215] relative border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -517,7 +588,7 @@
         </div>
 
         <div class="flex flex-wrap gap-2 text-xs font-semibold">
-          <button data-filter="all" class="filter-btn active py-2.5 px-5 rounded-xl bg-amber-500 text-slate-950 font-bold transition-all shadow-sm">
+          <button data-filter="all" class="filter-btn active py-2.5 px-5 rounded-xl bg-amber-500 text-slate-950 font-bold transition-all shadow-md">
             Tümü
           </button>
           <button data-filter="endustriyel" class="filter-btn py-2.5 px-5 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-all">
@@ -532,6 +603,7 @@
         </div>
       </div>
 
+      <!-- 3D Projeler Grid -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- JS enjekte edecek -->
       </div>
@@ -539,44 +611,8 @@
     </div>
   </section>
 
-  <!-- YENİ BÖLÜM: ŞANTİYE VE SOSYAL MEDYA GALERİSİ (#galeri) -->
-  <section id="galeri" class="py-24 bg-[#1E2227] relative border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-        <div class="space-y-3">
-          <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
-            <i class="fa-solid fa-camera-retro"></i> Şantiye & Saha Günlüğü
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
-            Uygulama Sahasından Canlı Kareler
-          </h2>
-          <p class="text-slate-400 text-sm max-w-xl">
-            Balıkesir OSB lansmanları, çelik montaj anları, şantiye timelapseleri ve anahtar teslim aşamalarından canlı fotoğraflar.
-          </p>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" rel="noopener noreferrer" class="py-2.5 px-5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-xs font-bold flex items-center gap-2 shadow-md transition-transform hover:scale-105">
-            <i class="fa-brands fa-instagram text-sm"></i>
-            <span>Instagram'da Takip Et</span>
-          </a>
-          <a href="https://www.linkedin.com/in/yurdanur-k%C3%B6se-55a644241/" target="_blank" rel="noopener noreferrer" class="py-2.5 px-5 rounded-xl bg-[#0077B5] hover:bg-[#0088D1] text-white text-xs font-bold flex items-center gap-2 shadow-md transition-transform hover:scale-105">
-            <i class="fa-brands fa-linkedin-in text-sm"></i>
-            <span>LinkedIn Profili</span>
-          </a>
-        </div>
-      </div>
-
-      <div id="social-gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <!-- JS dolduracak -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 6. MEVZUAT, GÜVENLİK & STANDARTLAR (#standartlar) -->
-  <section id="standartlar" class="py-20 bg-[#14171A] relative border-b border-slate-800">
+  <!-- 7. MEVZUAT, GÜVENLİK & STANDARTLAR (#standartlar) -->
+  <section id="standartlar" class="py-20 bg-[#181C21] relative border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
@@ -593,7 +629,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="p-7 rounded-2xl bg-[#1E2227] border border-slate-700/80 flex flex-col justify-between">
+        <div class="p-7 rounded-2xl bg-[#0F1215] border border-slate-700/80 flex flex-col justify-between">
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl">
               <i class="fa-solid fa-gas-pump"></i>
@@ -608,7 +644,7 @@
           </p>
         </div>
 
-        <div class="p-7 rounded-2xl bg-[#1E2227] border border-slate-700/80 flex flex-col justify-between">
+        <div class="p-7 rounded-2xl bg-[#0F1215] border border-slate-700/80 flex flex-col justify-between">
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl">
               <i class="fa-solid fa-fire-extinguisher"></i>
@@ -623,14 +659,14 @@
           </p>
         </div>
 
-        <div class="p-7 rounded-2xl bg-[#1E2227] border border-slate-700/80 flex flex-col justify-between">
+        <div class="p-7 rounded-2xl bg-[#0F1215] border border-slate-700/80 flex flex-col justify-between">
           <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl">
               <i class="fa-solid fa-user-shield"></i>
             </div>
             <div>
               <h3 class="text-base font-bold font-heading text-white">İSG Protokolleri</h3>
-              <span class="text-xs font-semibold text-sky-400">Sıfır Kaza Prensibi</span>
+              <span class="text-xs font-semibold text-cyan-400">Sıfır Kaza Prensibi</span>
             </div>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed">
@@ -643,8 +679,8 @@
     </div>
   </section>
 
-  <!-- 7. ŞUBELERİMİZ & HİZMET NOKTALARI (#subeler) -->
-  <section id="subeler" class="py-24 bg-[#14171A] relative border-b border-slate-800">
+  <!-- 8. ŞUBELERİMİZ & HİZMET NOKTALARI (#subeler) -->
+  <section id="subeler" class="py-24 bg-[#0F1215] relative border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <div class="max-w-3xl mb-14 space-y-3">
@@ -661,91 +697,97 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="prestige-card p-7 rounded-2xl bg-[#1E2227] flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-semibold text-sky-400 mb-4">
-              <span>ŞUBE 01</span>
-              <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">Sanayi & Taahhüt</span>
-            </div>
-            <h3 class="text-xl font-bold font-heading text-white mb-2">
-              Organize Sanayi (OSB) Şubesi
-            </h3>
-            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
-              Balıkesir Organize Sanayi Bölgesi Proje Yönetim & Şantiye Koordinasyon Ofisi
-            </p>
-            <div class="space-y-2.5 text-xs text-slate-300 mb-6 font-medium">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-clock text-amber-400"></i>
-                <span>Hafta İçi: 08:30 - 18:30</span>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl bg-[#181C21] border border-slate-700/80 flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center justify-between text-xs font-semibold text-cyan-400 mb-4">
+                <span>ŞUBE 01</span>
+                <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300">Sanayi & Taahhüt</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-phone text-sky-400"></i>
-                <a href="tel:02662439665" class="hover:text-white">0266 243 96 65</a>
+              <h3 class="text-xl font-bold font-heading text-white mb-2">
+                Organize Sanayi (OSB) Şubesi
+              </h3>
+              <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+                Balıkesir Organize Sanayi Bölgesi Proje Yönetim & Şantiye Koordinasyon Ofisi
+              </p>
+              <div class="space-y-2.5 text-xs text-slate-300 mb-6 font-medium">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-clock text-amber-400"></i>
+                  <span>Hafta İçi: 08:30 - 18:30</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-phone text-cyan-400"></i>
+                  <a href="tel:02662439665" class="hover:text-white">0266 243 96 65</a>
+                </div>
               </div>
             </div>
+            <a href="https://maps.google.com/?q=Balikesir+Organize+Sanayi+Bolgesi" target="_blank" rel="noopener noreferrer" class="btn-outline-light py-2.5 px-4 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
+              <i class="fa-solid fa-diamond-turn-right text-amber-400"></i>
+              <span>OSB Şubesine Yol Tarifi Al</span>
+            </a>
           </div>
-          <a href="https://maps.google.com/?q=Balikesir+Organize+Sanayi+Bolgesi" target="_blank" rel="noopener noreferrer" class="btn-outline-light py-2.5 px-4 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-diamond-turn-right text-amber-400"></i>
-            <span>OSB Şubesine Yol Tarifi Al</span>
-          </a>
         </div>
 
-        <div class="prestige-card p-7 rounded-2xl bg-[#1E2227] flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-semibold text-amber-400 mb-4">
-              <span>ŞUBE 02</span>
-              <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300">7/24 Akaryakıt</span>
-            </div>
-            <h3 class="text-xl font-bold font-heading text-white mb-2">
-              Çevre Yolu Akaryakıt Şubesi
-            </h3>
-            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
-              Balıkesir Çevre Yolu İstasyon & Dinlenme Tesisi (Petrol Ofisi Standartları)
-            </p>
-            <div class="space-y-2.5 text-xs text-slate-300 mb-6 font-medium">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-clock text-emerald-400"></i>
-                <span>7/24 Kesintisiz Hizmet & Market</span>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl bg-[#181C21] border border-slate-700/80 flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center justify-between text-xs font-semibold text-amber-400 mb-4">
+                <span>ŞUBE 02</span>
+                <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300">7/24 Akaryakıt</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-gas-pump text-amber-400"></i>
-                <span>Kurumsal Filo & Otogaz Dolumu</span>
+              <h3 class="text-xl font-bold font-heading text-white mb-2">
+                Çevre Yolu Akaryakıt Şubesi
+              </h3>
+              <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+                Balıkesir Çevre Yolu İstasyon & Dinlenme Tesisi (EPDK Standartları)
+              </p>
+              <div class="space-y-2.5 text-xs text-slate-300 mb-6 font-medium">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-clock text-emerald-400"></i>
+                  <span>7/24 Kesintisiz Hizmet & Market</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-gas-pump text-amber-400"></i>
+                  <span>Kurumsal Filo & Otogaz Dolumu</span>
+                </div>
               </div>
             </div>
+            <a href="https://maps.google.com/?q=Balikesir+Cevre+Yolu+Petrol+Ofisi" target="_blank" rel="noopener noreferrer" class="btn-amber py-2.5 px-4 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>İstasyona Yol Tarifi Al</span>
+            </a>
           </div>
-          <a href="https://maps.google.com/?q=Balikesir+Cevre+Yolu+Petrol+Ofisi" target="_blank" rel="noopener noreferrer" class="btn-amber py-2.5 px-4 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-diamond-turn-right"></i>
-            <span>İstasyona Yol Tarifi Al</span>
-          </a>
         </div>
 
-        <div class="prestige-card p-7 rounded-2xl bg-[#1E2227] flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-semibold text-slate-400 mb-4">
-              <span>GENEL MERKEZ</span>
-              <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300">Merkez Ofis</span>
-            </div>
-            <h3 class="text-xl font-bold font-heading text-white mb-2">
-              Karesi Genel Merkez
-            </h3>
-            <p class="text-xs text-slate-400 mb-5 leading-relaxed">
-              Bandırma Caddesi No: 41/A Karesi / Balıkesir
-            </p>
-            <div class="space-y-2.5 text-xs text-slate-300 mb-6 font-medium">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-envelope text-sky-400"></i>
-                <a href="mailto:info@yurdanurkose.com" class="hover:text-white">info@yurdanurkose.com</a>
+        <div class="card-3d-wrap">
+          <div class="card-3d-element p-7 rounded-2xl bg-[#181C21] border border-slate-700/80 flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center justify-between text-xs font-semibold text-slate-400 mb-4">
+                <span>GENEL MERKEZ</span>
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300">Merkez Ofis</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-phone text-amber-400"></i>
-                <a href="tel:02662439665" class="hover:text-white">0266 243 96 65</a>
+              <h3 class="text-xl font-bold font-heading text-white mb-2">
+                Karesi Genel Merkez
+              </h3>
+              <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+                Bandırma Caddesi No: 41/A Karesi / Balıkesir
+              </p>
+              <div class="space-y-2.5 text-xs text-slate-300 mb-6 font-medium">
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-envelope text-cyan-400"></i>
+                  <a href="mailto:info@yurdanurkose.com" class="hover:text-white">info@yurdanurkose.com</a>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-phone text-amber-400"></i>
+                  <a href="tel:02662439665" class="hover:text-white">0266 243 96 65</a>
+                </div>
               </div>
             </div>
+            <a href="https://maps.google.com/?q=Bandirma+Caddesi+No:41/A+Karesi+Balikesir" target="_blank" rel="noopener noreferrer" class="btn-outline-light py-2.5 px-4 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
+              <i class="fa-solid fa-map-location-dot text-cyan-400"></i>
+              <span>Merkez Ofis Harita Konumu</span>
+            </a>
           </div>
-          <a href="https://maps.google.com/?q=Bandirma+Caddesi+No:41/A+Karesi+Balikesir" target="_blank" rel="noopener noreferrer" class="btn-outline-light py-2.5 px-4 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-map-location-dot text-sky-400"></i>
-            <span>Merkez Ofis Harita Konumu</span>
-          </a>
         </div>
 
       </div>
@@ -753,8 +795,8 @@
     </div>
   </section>
 
-  <!-- 8. BÖLÜM: TEMİZ BEYAZ SEÇİMLİ ÖN TALEP VE KEŞİF FORMU (#teklif-formu) -->
-  <section id="teklif-formu" class="py-24 bg-gradient-to-b from-[#14171A] to-[#0F1113] relative border-b border-slate-800">
+  <!-- 9. BÖLÜM: TEMİZ BEYAZ SEÇİMLİ ÖN TALEP FORMU (#teklif-formu) -->
+  <section id="teklif-formu" class="py-24 bg-gradient-to-b from-[#0F1215] to-[#080A0C] relative border-b border-slate-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-8">
       
       <div class="text-center space-y-3 mb-12">
@@ -790,7 +832,7 @@
               </div>
 
               <div data-type="Akaryakıt İstasyonu" class="form-select-pill p-4 rounded-xl flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-600 flex items-center justify-center text-lg shrink-0">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-600 flex items-center justify-center text-lg shrink-0">
                   <i class="fa-solid fa-gas-pump"></i>
                 </div>
                 <div>
@@ -924,15 +966,15 @@
     </div>
   </section>
 
-  <!-- 9. FOOTER (Alt Bilgi) -->
-  <footer class="bg-[#0F1113] text-slate-400 border-t border-slate-800 pt-16 pb-12 text-xs">
+  <!-- 10. FOOTER (Alt Bilgi) -->
+  <footer class="bg-[#0A0C0E] text-slate-400 border-t border-slate-800 pt-16 pb-12 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 pb-12 border-b border-slate-800">
         
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-heading font-extrabold text-lg flex items-center justify-center">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-heading font-extrabold text-lg flex items-center justify-center shadow-md shadow-amber-500/20">
               YK
             </div>
             <div>
@@ -941,7 +983,7 @@
             </div>
           </div>
           <p class="text-slate-400 leading-relaxed text-xs">
-            Balıkesir ve çevre OSB'lerde ağır sanayi fabrikaları, akaryakıt istasyonları ve lojistik tesislerin güvenilir mühendislik ve taahhüt ortağı.
+            Balıkesir ve çevre OSB'lerde ağır sanayi fabrikaları, akaryakıt istasyonları ve lojistik tesislerin güvenilir 3D mimarlık ve mühendislik taahhüt ortağı.
           </p>
           <div class="text-[11px] text-slate-500">
             Balıkesir Ticaret Sicili tescilli resmi tüzel kişilik.
@@ -956,14 +998,14 @@
             <li><a href="#hakkimizda" class="hover:text-amber-400 transition-colors">Kurumsal & Saha Disiplini</a></li>
             <li><a href="#uzmanliklar" class="hover:text-amber-400 transition-colors">Endüstriyel & Akaryakıt Taahhüdü</a></li>
             <li><a href="#projeler" class="hover:text-amber-400 transition-colors">Projeler Portföyü</a></li>
-            <li><a href="#galeri" class="hover:text-amber-400 transition-colors">Şantiye Fotoğrafları & Galeri</a></li>
+            <li><a href="#flow-stream" class="hover:text-amber-400 transition-colors">Canlı 3D Fotoğraf Akışı</a></li>
             <li><a href="#standartlar" class="hover:text-amber-400 transition-colors">EPDK & Güvenlik Standartları</a></li>
             <li><a href="#subeler" class="hover:text-amber-400 transition-colors">Organize Sanayi Şubesi</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white uppercase font-bold text-xs tracking-wider mb-4 border-l-2 border-sky-500 pl-2">
+          <h4 class="text-white uppercase font-bold text-xs tracking-wider mb-4 border-l-2 border-cyan-500 pl-2">
             İletişim Bilgileri
           </h4>
           <ul class="space-y-3 text-xs">
@@ -972,11 +1014,11 @@
               <span>Bandırma Caddesi No: 41/A Karesi / Balıkesir</span>
             </li>
             <li class="flex items-center gap-2.5">
-              <i class="fa-solid fa-phone text-sky-400"></i>
+              <i class="fa-solid fa-phone text-cyan-400"></i>
               <a href="tel:02662439665" class="hover:text-white">0266 243 96 65</a>
             </li>
             <li class="flex items-center gap-2.5">
-              <i class="fa-solid fa-envelope text-sky-400"></i>
+              <i class="fa-solid fa-envelope text-cyan-400"></i>
               <a href="mailto:info@yurdanurkose.com" class="hover:text-white">info@yurdanurkose.com</a>
             </li>
             <li class="flex items-center gap-2.5">
@@ -994,13 +1036,13 @@
             Şantiye timelapseleri, çelik montaj görüntüleri ve teknik içerikler için takip edin:
           </p>
           <div class="flex items-center gap-3">
-            <a href="https://www.linkedin.com/in/yurdanur-k%C3%B6se-55a644241/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#1E2227] hover:bg-[#0077B5] text-white flex items-center justify-center transition-colors border border-slate-700" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/yurdanur-k%C3%B6se-55a644241/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#181C21] hover:bg-[#0077B5] text-white flex items-center justify-center transition-colors border border-slate-700" title="LinkedIn">
               <i class="fa-brands fa-linkedin-in text-base"></i>
             </a>
-            <a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#1E2227] hover:bg-pink-600 text-white flex items-center justify-center transition-colors border border-slate-700" title="Instagram">
+            <a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#181C21] hover:bg-pink-600 text-white flex items-center justify-center transition-colors border border-slate-700" title="Instagram">
               <i class="fa-brands fa-instagram text-base"></i>
             </a>
-            <a href="https://wa.me/902662439665" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#1E2227] hover:bg-emerald-600 text-white flex items-center justify-center transition-colors border border-slate-700" title="WhatsApp">
+            <a href="https://wa.me/902662439665" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#181C21] hover:bg-emerald-600 text-white flex items-center justify-center transition-colors border border-slate-700" title="WhatsApp">
               <i class="fa-brands fa-whatsapp text-base"></i>
             </a>
           </div>
@@ -1032,15 +1074,15 @@
   </footer>
 
   <!-- PROJE DETAY MODALI / LIGHTBOX -->
-  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
-    <div class="modal-content-box relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#1E2227] border border-slate-700 rounded-2xl shadow-2xl">
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
+    <div class="modal-content-box relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#181C21] border border-slate-700 rounded-2xl shadow-2xl">
       <div id="modal-project-details"></div>
     </div>
   </div>
 
   <!-- EPDK & İSG GÜVENCESİ BİLGİLENDİRME MODALI -->
-  <div id="epdk-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
-    <div class="modal-content-box relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-[#1E2227] border border-amber-500/50 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+  <div id="epdk-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
+    <div class="modal-content-box relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-[#181C21] border border-amber-500/50 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
       <div class="flex items-center justify-between border-b border-slate-700 pb-4">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
@@ -1067,7 +1109,7 @@
         </div>
 
         <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-          <h4 class="font-bold text-sky-400 mb-1 flex items-center gap-2">
+          <h4 class="font-bold text-cyan-400 mb-1 flex items-center gap-2">
             <i class="fa-solid fa-user-shield"></i> İş Sağlığı ve Güvenliği (İSG) Protokolleri
           </h4>
           <p class="text-slate-400 text-xs">
@@ -1094,7 +1136,7 @@
   </div>
 
   <!-- GİZLİLİK POLİTİKASI MODALI -->
-  <div id="privacy-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
+  <div id="privacy-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
     <div class="modal-content-box relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 border border-slate-200">
       <div class="flex items-center justify-between border-b border-slate-100 pb-4">
         <div>
@@ -1118,7 +1160,7 @@
 
         <h4 class="font-bold text-slate-900 text-sm">2. Çerezler (Cookies)</h4>
         <p>
-          Sitemizde kullanıcı deneyimini iyileştirmek, sayfa hızını optimize etmek ve temel analitik ölçümleri yapmak amacıyla zorunlu ve işlevsel çerezler kullanılmaktadır. Çerezleri tarayıcı ayarlarınızdan dilediğiniz zaman devre dışı bırakabilirsiniz.
+          Sitemizde kullanıcı deneyimini iyileştirmek, sayfa hızını optimize etmek ve temel analitik ölçümleri yapmak amacıyla zorunlu ve işlevsel çerezler kullanılmaktadır.
         </p>
 
         <h4 class="font-bold text-slate-900 text-sm">3. Üçüncü Taraflarla Paylaşım</h4>
@@ -1141,7 +1183,7 @@
   </div>
 
   <!-- KVKK AYDINLATMA METNİ MODALI -->
-  <div id="kvkk-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
+  <div id="kvkk-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
     <div class="modal-content-box relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 border border-slate-200">
       <div class="flex items-center justify-between border-b border-slate-100 pb-4">
         <div>
@@ -1167,12 +1209,12 @@
 
         <h4 class="font-bold text-slate-900 text-sm">2. Veri Toplama Yöntemi ve Hukuki Sebebi</h4>
         <p>
-          Kişisel verileriniz, web sitemiz üzerindeki teklif formları, e-posta, telefon ve fiziki toplantı kanalları aracılığıyla elektronik ve fiziki ortamda toplanmaktadır. İşleme faaliyeti, "bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması" hukuki sebebine dayanmaktadır.
+          Kişisel verileriniz, web sitemiz üzerindeki teklif formları, e-posta, telefon ve fiziki toplantı kanalları aracılığıyla elektronik ve fiziki ortamda toplanmaktadır.
         </p>
 
         <h4 class="font-bold text-slate-900 text-sm">3. İlgili Kişinin Hakları (Madde 11)</h4>
         <p>
-          KVKK'nın 11. maddesi uyarınca veri sahipleri; kişisel verilerinin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, amaca uygun kullanılıp kullanılmadığını öğrenme, verilerin düzeltilmesini veya silinmesini isteme haklarına sahiptir. Başvurularınızı yukarıda belirtilen şirket adresimize yazılı olarak veya kayıtlı e-posta adresimiz üzerinden iletebilirsiniz.
+          KVKK'nın 11. maddesi uyarınca veri sahipleri; kişisel verilerinin işlenip işlenmediğini öğrenme, amaca uygun kullanılıp kullanılmadığını öğrenme, verilerin düzeltilmesini veya silinmesini isteme haklarına sahiptir.
         </p>
       </div>
 
@@ -1185,7 +1227,7 @@
   </div>
 
   <!-- BAŞARI & WHATSAPP MODALI -->
-  <div id="proposal-success-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+  <div id="proposal-success-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
     <div class="modal-content-box relative w-full max-w-md bg-white text-slate-900 rounded-2xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border border-slate-200">
       <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
         <i class="fa-solid fa-circle-check"></i>

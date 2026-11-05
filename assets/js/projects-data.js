@@ -1,53 +1,79 @@
 // Yurdanur Köse Mimarlık & İnşaat - Proje Veri Şeması
-// Firma Orijinal OSB Projeleri ve Akaryakıt Taahhüt Portföyü
+// Tüm görseller firmanın Instagram hesabından (@yurdanurkosemimarlik) alınmıştır.
 
 const PROJECTS_DATA = [
   {
-    id: "proj-lansman",
-    title: "Balıkesir OSB Ticari Dükkanlar & Depolama Tesisleri",
+    id: "proj-1",
+    title: "Balıkesir OSB Ticari & Depolama Tesisleri",
     slug: "balikesir-osb-ticari-depolama",
     category: "endustriyel",
-    categoryLabel: "OSB Ticari & Depo",
+    categoryLabel: "OSB Projesi",
     status: "tamamlandi",
-    statusLabel: "Lansman Yapıldı",
+    statusLabel: "Lansman Satışı",
     location: "Balıkesir Organize Sanayi Bölgesi",
     areaSquareMeters: 18500,
-    structureType: "Ağır Çelik & Modüler Karkas",
+    structureType: "Modüler Çelik Karkas",
     deliveryTimeMonths: 8,
-    clientOrBrand: "Balıkesir OSB Yatırımı",
-    coverImage: "assets/images/osb-ticari-lansman.jpg",
+    clientOrBrand: "Balıkesir OSB",
+    coverImage: "assets/images/instagram/insta-06.jpg",
     galleryImages: [
-      "assets/images/osb-ticari-lansman.jpg",
-      "assets/images/fabrika-1.jpg"
+      "assets/images/instagram/insta-06.jpg",
+      "assets/images/instagram/insta-05.jpg",
+      "assets/images/instagram/insta-07.jpg"
     ],
-    scopeSummary: "Balıkesir Organize Sanayi Bölgesi'nde sanayici ve lojistik firmaları için modüler ticari dükkanlar, depolama alanları, ağır tonajlı zemin ve geniş araç yanaşma manevra sahaları projelendirilip başarıyla teslim edilmiştir.",
+    scopeSummary: "Balıkesir OSB'de ticari dükkanlar, depolama alanları ve endüstriyel lojistik birimleri mimari projelendirme ve uygulama taahhüdü.",
     technicalSpecs: {
       craneCapacityTon: 10,
       floorLoadCapacityKgM2: 7500,
-      substationKva: 2000,
+      substationKva: 1600,
       canopyHeightMeters: null
     }
   },
   {
-    id: "proj-1",
-    title: "Balıkesir OSB Ağır Sanayi & Fabrika Tesisi",
-    slug: "balikesir-osb-agir-sanayi-tesisi",
+    id: "proj-2",
+    title: "Akaryakıt & Servis İstasyonu Tesisleri",
+    slug: "akaryakit-servis-istasyonu",
+    category: "akaryakit",
+    categoryLabel: "Akaryakıt & Kanopi",
+    status: "tamamlandi",
+    statusLabel: "Teslim Edildi",
+    location: "Balıkesir - Bursa Çevre Yolu / Karesi",
+    areaSquareMeters: 5400,
+    structureType: "Çelik Kanopi & Kompozit",
+    deliveryTimeMonths: 5,
+    clientOrBrand: "Dağıtıcı Standartları",
+    coverImage: "assets/images/instagram/insta-03.jpg",
+    galleryImages: [
+      "assets/images/instagram/insta-03.jpg",
+      "assets/images/instagram/insta-04.jpg"
+    ],
+    scopeSummary: "EPDK kurallarına tam uyumlu çelik kanopi montajı, yer altı yakıt tankları, ex-proof elektrik altyapısı, market ve servis alanları.",
+    technicalSpecs: {
+      craneCapacityTon: null,
+      floorLoadCapacityKgM2: 8000,
+      substationKva: 400,
+      canopyHeightMeters: 5.4
+    }
+  },
+  {
+    id: "proj-3",
+    title: "Endüstriyel Üretim Tesisi & Fabrika İmalatı",
+    slug: "endustriyel-uretim-fabrikasi",
     category: "endustriyel",
     categoryLabel: "OSB Fabrika",
     status: "tamamlandi",
     statusLabel: "Teslim Edildi",
-    location: "Balıkesir OSB / Karesi",
-    areaSquareMeters: 14500,
-    structureType: "Ağır Çelik & Prefabrik",
-    deliveryTimeMonths: 8,
+    location: "Balıkesir OSB Sanayi Bölgesi",
+    areaSquareMeters: 12800,
+    structureType: "Ağır Çelik Taşıyıcı",
+    deliveryTimeMonths: 7,
     clientOrBrand: "Sanayi Yatırımı",
-    coverImage: "assets/images/fabrika-1.jpg",
+    coverImage: "assets/images/instagram/insta-12.jpg",
     galleryImages: [
-      "assets/images/fabrika-1.jpg",
-      "assets/images/fabrika-2.jpg",
-      "assets/images/fabrika-3.jpg"
+      "assets/images/instagram/insta-12.jpg",
+      "assets/images/instagram/insta-11.jpg"
     ],
-    scopeSummary: "Ağır çelik konstrüksiyon imalatı, çift kiriş tavan vinç yolları, yüksek mukavemetli endüstriyel saha betonu ve modern idari yönetim binası.",
+    scopeSummary: "Ağır çelik konstrüksiyon karkas, tavan vinç yolları, yüksek mukavemetli endüstriyel zemin betonu ve cephe giydirme çözümleri.",
     technicalSpecs: {
       craneCapacityTon: 15,
       floorLoadCapacityKgM2: 6000,
@@ -56,76 +82,24 @@ const PROJECTS_DATA = [
     }
   },
   {
-    id: "proj-2",
-    title: "Petrol Ofisi Akaryakıt & Dinlenme İstasyonu",
-    slug: "petrol-ofisi-akaryakit-dinlenme-istasyonu",
-    category: "akaryakit",
-    categoryLabel: "Akaryakıt İstasyonu",
-    status: "tamamlandi",
-    statusLabel: "Teslim Edildi",
-    location: "Balıkesir - Bursa Çevre Yolu / Karesi",
-    areaSquareMeters: 5200,
-    structureType: "Çelik Kanopi & Kompozit Tesis",
-    deliveryTimeMonths: 5,
-    clientOrBrand: "Petrol Ofisi Standartları",
-    coverImage: "assets/images/akaryakit-1.jpg",
-    galleryImages: [
-      "assets/images/akaryakit-1.jpg",
-      "assets/images/akaryakit-2.jpg"
-    ],
-    scopeSummary: "EPDK mevzuatına tam uyumlu 6 adalılık çelik kanopi imalatı, ATEX sertifikalı ex-proof elektrik altyapısı, çift cidarlı yer altı tankları ve 7/24 market & oto yıkama.",
-    technicalSpecs: {
-      craneCapacityTon: null,
-      floorLoadCapacityKgM2: 8000,
-      substationKva: 400,
-      canopyHeightMeters: 5.5
-    }
-  },
-  {
-    id: "proj-3",
-    title: "Balıkesir OSB Üretim & Enjeksiyon Tesisi",
-    slug: "balikesir-osb-uretim-tesisi",
-    category: "endustriyel",
-    categoryLabel: "OSB Fabrika",
-    status: "tamamlandi",
-    statusLabel: "Teslim Edildi",
-    location: "Balıkesir OSB 1. Etap",
-    areaSquareMeters: 9200,
-    structureType: "Ağır Çelik Karkas",
-    deliveryTimeMonths: 7,
-    clientOrBrand: "Özel Sanayici",
-    coverImage: "assets/images/fabrika-2.jpg",
-    galleryImages: [
-      "assets/images/fabrika-2.jpg",
-      "assets/images/fabrika-1.jpg"
-    ],
-    scopeSummary: "Geniş açıklıklı çelik makas sistemi, sandviç panel cephe giydirme, yangın sprinkler sistemi ve entegre ar-ge ofisleri.",
-    technicalSpecs: {
-      craneCapacityTon: 10,
-      floorLoadCapacityKgM2: 5000,
-      substationKva: 1250,
-      canopyHeightMeters: null
-    }
-  },
-  {
     id: "proj-4",
-    title: "Bandırma OSB Lojistik Depo & Antrepo",
-    slug: "bandirma-osb-lojistik-antrepo",
+    title: "Lojistik Depolama & Antrepo Kompleksi",
+    slug: "lojistik-antrepo-kompleksi",
     category: "lojistik",
     categoryLabel: "Lojistik Depo",
     status: "tamamlandi",
     statusLabel: "Teslim Edildi",
-    location: "Bandırma OSB / Balıkesir",
-    areaSquareMeters: 16500,
+    location: "Bandırma - Balıkesir OSB Aksı",
+    areaSquareMeters: 16200,
     structureType: "Prefabrik Betonarme + Çelik",
     deliveryTimeMonths: 9,
-    clientOrBrand: "Lojistik Şirketi",
-    coverImage: "assets/images/depo-1.jpg",
+    clientOrBrand: "Lojistik Merkezi",
+    coverImage: "assets/images/instagram/insta-15.jpg",
     galleryImages: [
-      "assets/images/depo-1.jpg",
-      "assets/images/fabrika-3.jpg"
+      "assets/images/instagram/insta-15.jpg",
+      "assets/images/instagram/insta-14.jpg"
     ],
-    scopeSummary: "14 adet hidrolik seviye ayarlı yükleme rampası, 13 metre tavan yüksekliği, FM Global yangın yönetmeliği ve aşınmaya dirençli zemin betonları.",
+    scopeSummary: "Hidrolik yükleme rampaları, geniş tır manevra sahaları, FM Global yangın sprinkler altyapısı ve yüksek tavanlı antrepo.",
     technicalSpecs: {
       craneCapacityTon: 20,
       floorLoadCapacityKgM2: 7500,
@@ -135,68 +109,78 @@ const PROJECTS_DATA = [
   },
   {
     id: "proj-5",
-    title: "Körfez Bölgesi Akaryakıt & Otogaz İstasyonu",
+    title: "Körfez Bölgesi Akaryakıt & LPG Otogaz İstasyonu",
     slug: "korfez-akaryakit-lpg-istasyonu",
     category: "akaryakit",
     categoryLabel: "Akaryakıt & LPG",
     status: "devam-ediyor",
     statusLabel: "Devam Eden Şantiye",
-    location: "Edremit Körfez Yolu / Balıkesir",
-    areaSquareMeters: 4600,
-    structureType: "Çelik Kanopi & İdari Bina",
+    location: "Edremit Körfez Yolu",
+    areaSquareMeters: 4800,
+    structureType: "Çelik Kanopi & İdari Tesis",
     deliveryTimeMonths: 4,
-    clientOrBrand: "Bölgesel Dağıtıcı Ağı",
-    coverImage: "assets/images/akaryakit-2.jpg",
+    clientOrBrand: "Bölgesel Dağıtıcı İstasyonu",
+    coverImage: "assets/images/instagram/insta-08.jpg",
     galleryImages: [
-      "assets/images/akaryakit-2.jpg",
-      "assets/images/akaryakit-1.jpg"
+      "assets/images/instagram/insta-08.jpg",
+      "assets/images/instagram/insta-09.jpg"
     ],
-    scopeSummary: "LPG dolum adası ve otomasyon altyapısı, çevre koruma drenaj kanalları, hidrokarbon ayrıştırıcı filtreler ve kurumsal kimlik giydirme taahhüdü.",
+    scopeSummary: "LPG dolum adası, drenaj kanalları, hidrokarbon ayrıştırıcı filtreler ve kurumsal kimlik giydirme taahhüdü.",
     technicalSpecs: {
       craneCapacityTon: null,
       floorLoadCapacityKgM2: 6000,
       substationKva: 315,
       canopyHeightMeters: 5.2
     }
+  },
+  {
+    id: "proj-6",
+    title: "OSB İdari Yönetim & İş Merkezi Binaları",
+    slug: "osb-idari-yonetim-binasi",
+    category: "endustriyel",
+    categoryLabel: "İdari Yapı",
+    status: "devam-ediyor",
+    statusLabel: "Aktif Şantiye",
+    location: "Balıkesir OSB",
+    areaSquareMeters: 9600,
+    structureType: "Kompozit & Çelik Karma",
+    deliveryTimeMonths: 6,
+    clientOrBrand: "Özel Sanayici",
+    coverImage: "assets/images/instagram/insta-20.jpg",
+    galleryImages: [
+      "assets/images/instagram/insta-20.jpg",
+      "assets/images/instagram/insta-21.jpg"
+    ],
+    scopeSummary: "Fabrika içi ergonomik idari ofisler, modern cephe giydirme, laboratuvar ve sosyal yaşam alanları.",
+    technicalSpecs: {
+      craneCapacityTon: 5,
+      floorLoadCapacityKgM2: 5000,
+      substationKva: 1000,
+      canopyHeightMeters: null
+    }
   }
 ];
 
-// Firma Sosyal Medya & Şantiye Galerisi Görselleri
-const SOCIAL_GALLERY = [
-  {
-    img: "assets/images/osb-ticari-lansman.jpg",
-    title: "Balıkesir OSB Ticari & Depolama Lansman Satışı",
-    category: "OSB Projesi",
-    badge: "Lansman"
-  },
-  {
-    img: "assets/images/fabrika-1.jpg",
-    title: "Balıkesir OSB Çelik Makas Montajı",
-    category: "OSB Şantiyesi",
-    badge: "Çelik Montaj"
-  },
-  {
-    img: "assets/images/akaryakit-1.jpg",
-    title: "Akaryakıt İstasyonu Kanopi İmalatı",
-    category: "Akaryakıt",
-    badge: "EPDK Standart"
-  },
-  {
-    img: "assets/images/fabrika-2.jpg",
-    title: "Organize Sanayi Fabrika Taşıyıcı Karkas",
-    category: "OSB Fabrika",
-    badge: "Ağır Çelik"
-  },
-  {
-    img: "assets/images/depo-1.jpg",
-    title: "Lojistik Depo & Yükleme Rampaları",
-    category: "Lojistik Tesis",
-    badge: "Antrepo"
-  },
-  {
-    img: "assets/images/akaryakit-2.jpg",
-    title: "Akaryakıt İstasyon Saha Betonu ve Adalar",
-    category: "Akaryakıt",
-    badge: "İstasyon Tesis"
-  }
+// Gerçek Instagram Fotoğraflarından Oluşan Sürekli Akan 3D Akış (Marquee) Dizisi
+const INSTAGRAM_FLOW_IMAGES = [
+  { img: "assets/images/instagram/insta-01.jpg", title: "Balıkesir OSB Proje Çizimi" },
+  { img: "assets/images/instagram/insta-02.jpg", title: "Şantiye Çelik Karkas İncelemesi" },
+  { img: "assets/images/instagram/insta-03.jpg", title: "Akaryakıt İstasyon Kanopi Alanı" },
+  { img: "assets/images/instagram/insta-04.jpg", title: "OSB Ticari Dükkanlar Tasarımı" },
+  { img: "assets/images/instagram/insta-05.jpg", title: "Lansman Programı & Sanayici Buluşması" },
+  { img: "assets/images/instagram/insta-06.jpg", title: "Balıkesir OSB Lansman Satışı" },
+  { img: "assets/images/instagram/insta-07.jpg", title: "Endüstriyel Tesis Cephe Tasarımı" },
+  { img: "assets/images/instagram/insta-08.jpg", title: "İstasyon & Dinlenme Tesisi" },
+  { img: "assets/images/instagram/insta-09.jpg", title: "Ağır Çelik Konstrüksiyon" },
+  { img: "assets/images/instagram/insta-10.jpg", title: "Fabrika Üretim Sahası" },
+  { img: "assets/images/instagram/insta-11.jpg", title: "Lojistik Depo Rampaları" },
+  { img: "assets/images/instagram/insta-12.jpg", title: "OSB Modern Yönetim Ofisleri" },
+  { img: "assets/images/instagram/insta-13.jpg", title: "Çelik Taşıyıcı İskelet" },
+  { img: "assets/images/instagram/insta-14.jpg", title: "Antrepo ve Sundurma İmalatı" },
+  { img: "assets/images/instagram/insta-15.jpg", title: "Ticari Depolama Kampüsü" },
+  { img: "assets/images/instagram/insta-16.jpg", title: "Şantiye Saha Koordinasyonu" },
+  { img: "assets/images/instagram/insta-17.jpg", title: "Modern Sanayi Mimarisi" },
+  { img: "assets/images/instagram/insta-18.jpg", title: "EPDK Uyumlu İstasyon Planı" },
+  { img: "assets/images/instagram/insta-19.jpg", title: "Tavan Vinci ve Vinç Yolları" },
+  { img: "assets/images/instagram/insta-20.jpg", title: "Endüstriyel Yapı İskân Aşaması" }
 ];
