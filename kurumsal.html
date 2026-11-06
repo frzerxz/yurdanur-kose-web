@@ -44,8 +44,8 @@
   <!-- HEADER -->
   <header class="site-header flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 rounded bg-[#D4A373] text-[#0D1013] font-heading font-extrabold text-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-md shadow-[#D4A373]/20">
-        YK
+      <div class="w-11 h-11 rounded-lg overflow-hidden bg-black border border-white/15 flex items-center justify-center transition-transform group-hover:scale-105 shadow-lg shadow-black/50 shrink-0">
+        <img src="assets/images/yk-logo-full.jpg" alt="Yurdanur Köse Mimarlık Logo" class="w-full h-full object-cover">
       </div>
       <div class="flex flex-col">
         <span class="font-heading font-bold text-white text-base tracking-tight leading-tight group-hover:text-[#D4A373] transition-colors">
@@ -322,22 +322,109 @@
   <div id="kvkk-modal" class="modal-backdrop">
     <div class="modal-panel max-w-4xl p-6 sm:p-10">
       <div class="flex justify-between items-center pb-5 border-b border-white/10">
-        <h3 class="text-xl font-heading font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-file-shield text-emerald-400"></i>
-          <span>KVKK Aydınlatma Metni</span>
-        </h3>
-        <button onclick="closeKvkkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+        <div>
+          <span class="text-xs font-mono text-[#D4A373] uppercase tracking-wider block">Yasal Bilgilendirme</span>
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-file-shield text-emerald-400"></i>
+            <span>6698 Sayılı KVKK Kapsamında Aydınlatma Metni</span>
+          </h3>
+        </div>
+        <button onclick="closeKvkkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
-      <div class="py-6 space-y-4 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto">
-        <p>6698 sayılı Kanun uyarınca veri sorumlusu Yurdanur Köse Mimarlık İnşaat ve Ticaret Limited Şirketi'dir.</p>
-        <p>İletişim bilgileriniz mimari sözleşmelerin kurulması ve ifası hukuki sebebine dayalı olarak güvenle işlenir.</p>
+
+      <div class="py-6 space-y-6 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto pr-2">
+        
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">1. Veri Sorumlusunun Kimliği</h4>
+          <p>
+            6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca; Balıkesir Ticaret Sicil Müdürlüğü nezdinde 18452 sicil numarasıyla kayıtlı, Bandırma Caddesi No: 41/A Karesi / Balıkesir adresinde mukim <strong>Yurdanur Köse Mimarlık İnşaat ve Ticaret Limited Şirketi</strong> (“Şirket” veya “Veri Sorumlusu”) olarak, mimari tasarım, inşaat taahhüt, organize sanayi yapıları ve akaryakıt tesisleri mühendislik faaliyetlerimiz kapsamında kişisel verilerinizin güvenliğine ve gizliliğine azami hassasiyet göstermekteyiz.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">2. İşlenen Kişisel Veri Kategorileri ve Türleri</h4>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+            <li><strong>Kimlik Verileri:</strong> Ad, soyad, T.C. kimlik numarası (sözleşme ve resmi ruhsat aşamalarında), imza ve unvan bilgileri.</li>
+            <li><strong>İletişim Verileri:</strong> Telefon numarası, kurumsal/bireysel e-posta adresi, tebligat adresi, WhatsApp yazışma kayıtları.</li>
+            <li><strong>Müşteri & Proje İşlem Verileri:</strong> Talep edilen yapı türü (OSB fabrika binası, akaryakıt istasyonu, lojistik depo vb.), arsa/parsel alanı (m²), ada/parsel numarası, imar durumu, keşif notları ve teknik şartname talepleri.</li>
+            <li><strong>Finansal & Fatura Verileri:</strong> Vergi dairesi, vergi kimlik numarası, banka hesap/IBAN bilgileri, hak ediş ve faturalandırma kayıtları.</li>
+            <li><strong>İşlem Güvenliği Verileri:</strong> Web sitesi ziyaretçi log kayıtları, IP adresleri, çerez (cookie) tercihleri.</li>
+            <li><strong>Fiziksel Mekân Güvenliği:</strong> Genel merkez ofisimizi ve taahhüdümüz altındaki şantiyeleri ziyaret eden kişilerin güvenlik kamerası (CCTV) görüntü kayıtları.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">3. Kişisel Verilerin İşlenme Amaçları</h4>
+          <p>Kişisel verileriniz aşağıdaki amaçlarla Kanun’un 5. ve 6. maddelerine uygun olarak işlenmektedir:</p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+            <li>Mimari proje çizimi, statik hesaplamalar, zemin etüdü ve resmi ruhsatlandırma süreçlerinin yürütülmesi,</li>
+            <li>Organize Sanayi Bölgesi (OSB) Bölge Müdürlükleri ve belediyeler nezdinde yapı ruhsatı ve yapı kullanma izin belgesi (iskân) başvurularının takibi,</li>
+            <li>EPDK Petrol Piyasası Lisans Yönetmeliği ve TSE 12820 standartları kapsamında akaryakıt istasyonu teknik uygunluk raporlarının tanzimi,</li>
+            <li>Keşif, metraj ve anahtar teslim taahhüt tekliflerinin hazırlanması ve tarafınıza sunulması,</li>
+            <li>6331 sayılı İş Sağlığı ve Güvenliği Kanunu uyarınca şantiye giriş-çıkış disiplininin ve can güvenliğinin temini,</li>
+            <li>6102 sayılı Türk Ticaret Kanunu, 213 sayılı Vergi Usul Kanunu ve ilgili mevzuat kapsamındaki yasal bildirim ve muhasebe yükümlülüklerinin yerine getirilmesi,</li>
+            <li>Müvekkil ve müşterilerimizle kurulan sözleşmesel ilişkilerin ifası ve operasyonel süreçlerin yönetimi.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">4. Kişisel Verilerin Aktarıldığı Taraflar ve Aktarım Amaçları</h4>
+          <p>Toplanan kişisel verileriniz, Kanun’un 8. ve 9. maddelerinde belirtilen şartlara uygun olarak yalnızca meşru amaçlarla sınırlı olmak üzere;</p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+            <li><strong>Resmi İdareler & Belediyeler:</strong> İlgili İl/İlçe Belediyeleri, BALOSB ve Muradiye OSB Bölge Müdürlükleri, Çevre Şehircilik ve İklim Değişikliği İl Müdürlükleri, Yapı Denetim Kuruluşları ve LİHKAB bürolarına,</li>
+            <li><strong>EPDK & Düzenleyici Kurumlar:</strong> Akaryakıt tesisleri projelerinde Enerji Piyasası Düzenleme Kurumu (EPDK), Türk Standardları Enstitüsü (TSE) ve ana dağıtıcı kuruluşlara,</li>
+            <li><strong>Yargı & Denetim Organları:</strong> Yetkili adli/idari makamlar, bilirkişilik kurulları, noterler ve icra dairelerine,</li>
+            <li><strong>Profesyonel Hizmet Ortakları:</strong> Mali müşavirler, hukuk danışmanları, bankalar ve bilgi teknolojileri altyapı sağlayıcılarımıza aktarılabilmektedir.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">5. Kişisel Veri Toplama Yöntemi ve Hukuki Sebepleri</h4>
+          <p>
+            Kişisel verileriniz; web sitemiz üzerindeki teklif formları, WhatsApp iletişim hattı, e-posta, telefon, şantiye tespit tutanakları ve fiziki evraklar aracılığıyla elektronik ve fiziki ortamda toplanmaktadır.
+          </p>
+          <p>Bu süreçler KVKK Madde 5/2 uyarınca:</p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+            <li><em>a) Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması,</em></li>
+            <li><em>ç) Veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması,</em></li>
+            <li><em>e) Bir hakkın tesisi, kullanılması veya korunması için veri işlemenin zorunlu olması,</em></li>
+            <li><em>f) İlgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması</em> hukuki sebeplerine dayalı olarak yürütülmektedir.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">6. Kişisel Verilerin Saklanma Süresi</h4>
+          <p>
+            Kişisel verileriniz; Türk Ticaret Kanunu, Vergi Usul Kanunu ve Borçlar Kanunu'ndaki zamanaşımı ve saklama süreleri (genel olarak 10 yıl, mimari ayıba karşı sorumluluk süreleri vb.) boyunca güvenli fiziksel ve dijital arşivlerde saklanır. Sürenin dolması veya işleme amacının ortadan kalkması durumunda ilk periyodik imha döneminde güvenle silinir, yok edilir veya anonim hale getirilir.
+          </p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">7. İlgili Kişinin (Veri Sahibinin) Kanun’un 11. Maddesinde Sayılan Hakları</h4>
+          <p>Kanun’un 11. maddesi uyarınca veri sahipleri olarak aşağıdaki haklara sahipsiniz:</p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+            <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+            <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,</li>
+            <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+            <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,</li>
+            <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</li>
+            <li>KVKK 7. maddesi uyarınca kişisel verilerin silinmesini veya yok edilmesini isteme,</li>
+            <li>Düzeltme, silme ve yok edilme işlemlerinin aktarılan 3. kişilere bildirilmesini isteme,</li>
+            <li>Münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+            <li>Kanuna aykırı işleme sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white">8. Başvuru Usulü ve İletişim</h4>
+          <p>
+            Haklarınıza ilişkin taleplerinizi "Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ" uyarınca; ıslak imzalı dilekçenizle <em>Bandırma Caddesi No: 41/A, Karesi / Balıkesir</em> adresimize bizzat veya noter aracılığıyla elden iletebilir; yahut güvenli elektronik imza/mobil imza kullanarak şirketimizin kurumsal e-posta adresi olan <strong>info@yurdanurkose.com</strong> adresine gönderebilirsiniz. Talepleriniz en geç 30 (otuz) gün içinde ücretsiz olarak sonuçlandırılacaktır.
+          </p>
+        </div>
+
       </div>
-      <div class="pt-5 border-t border-white/10 text-right">
-        <button onclick="closeKvkkModal()" class="btn-minimal text-xs py-2 px-6 rounded">Kapat</button>
-      </div>
-    </div>
   </div>
 
   <script src="assets/js/projects-data.js"></script>

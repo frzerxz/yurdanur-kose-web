@@ -433,3 +433,43 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   height: 2px;
   background: var(--accent-gold);
 }
+
+/* White Clean Architectural Proposal Card */
+.form-clean-card {
+  background: #FFFFFF !important;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: #0F172A;
+}
+
+@media (max-width: 640px) {
+  .form-clean-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+.radio-chip {
+  background: #F8FAFC !important;
+  border: 1.5px solid #E2E8F0 !important;
+  color: #1E293B !important;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radio-chip:hover {
+  border-color: #D4A373 !important;
+  background: #FFFDF9 !important;
+}
+
+.radio-chip:has(input:checked) {
+  border-color: #D4A373 !important;
+  background: #FBF6EF !important;
+  box-shadow: 0 2px 10px rgba(212, 163, 115, 0.25);
+}
+
+.radio-chip input[type="radio"] {
+  accent-color: #D4A373;
+  width: 1rem;
+  height: 1rem;
+}
