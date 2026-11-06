@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeler Portfolyosu | Yurdanur Köse Mimarlık & İnşaat</title>
+  
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  </script>
+
+  <meta name="description" content="Organize Sanayi Bölgeleri fabrika binaları, lojistik antrepolar, EPDK akaryakıt istasyonları ve özel mimari projelerimiz.">
+  <meta name="robots" content="index, follow">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0D1013',
+              surface: '#14181D',
+              gold: '#D4A373',
+              stone: '#E6E2D8'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0D1013] text-white antialiased selection:bg-[#D4A373] selection:text-black">
+
+  <!-- HEADER -->
+  <header class="site-header flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded bg-[#D4A373] text-[#0D1013] font-heading font-extrabold text-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-md shadow-[#D4A373]/20">
+        YK
+      </div>
+      <div class="flex flex-col">
+        <span class="font-heading font-bold text-white text-base tracking-tight leading-tight group-hover:text-[#D4A373] transition-colors">
+          YURDANUR KÖSE
+        </span>
+        <span class="text-[10px] font-mono tracking-wider text-slate-400 uppercase">
+          MİMARLIK & İNŞAAT TAAHHÜT
+        </span>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-xs font-medium uppercase tracking-wider text-slate-300">
+      <a href="index.html" class="site-nav-link hover:text-[#D4A373] transition-colors py-1">Ana Sayfa</a>
+      <a href="kurumsal.html" class="site-nav-link hover:text-[#D4A373] transition-colors py-1">Kurumsal</a>
+      <a href="projeler.html" class="site-nav-link hover:text-[#D4A373] transition-colors py-1">Projeler</a>
+      <a href="organize-sanayi.html" class="site-nav-link hover:text-[#D4A373] transition-colors py-1">Organize Sanayi & Akaryakıt</a>
+      <a href="galeri.html" class="site-nav-link hover:text-[#D4A373] transition-colors py-1">Şantiye Arşivi</a>
+      <a href="iletisim.html" class="site-nav-link hover:text-[#D4A373] transition-colors py-1">İletişim</a>
+    </nav>
+
+    <div class="hidden sm:flex items-center gap-5">
+      <div class="flex items-center gap-3 text-slate-400 text-sm border-r border-white/10 pr-4">
+        <a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A373]"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/yurdanurkosemimarlik" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A373]"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+        <a href="https://www.linkedin.com/in/yurdanur-k%C3%B6se-55a644241/" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A373]"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+      </div>
+      <a href="tel:02662439665" class="text-xs font-mono text-slate-300 hover:text-white flex items-center gap-2">
+        <i class="fa-solid fa-phone text-[#D4A373]"></i>
+        <span>0266 243 96 65</span>
+      </a>
+      <a href="iletisim.html" class="btn-gold text-xs py-2 px-4 rounded">
+        <span>Keşif & Teklif İste</span>
+      </a>
+    </div>
+
+    <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-white p-2">
+      <i class="fa-solid fa-bars text-lg"></i>
+    </button>
+  </header>
+
+  <!-- Mobil Menü -->
+  <div id="mobile-menu" class="hidden fixed inset-x-0 top-20 z-40 bg-[#12161B]/98 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4 text-sm font-medium">
+    <a href="index.html" class="block text-slate-200 hover:text-[#D4A373]">Ana Sayfa</a>
+    <a href="kurumsal.html" class="block text-slate-200 hover:text-[#D4A373]">Kurumsal & Deneyim</a>
+    <a href="projeler.html" class="block text-slate-200 hover:text-[#D4A373]">Projeler Vitrini</a>
+    <a href="organize-sanayi.html" class="block text-slate-200 hover:text-[#D4A373]">Organize Sanayi & Akaryakıt</a>
+    <a href="galeri.html" class="block text-slate-200 hover:text-[#D4A373]">Şantiye Arşivi</a>
+    <a href="iletisim.html" class="block text-slate-200 hover:text-[#D4A373]">İletişim & Harita</a>
+    <a href="iletisim.html" class="block btn-gold text-center py-2.5 rounded mt-4">Hızlı Keşif İste</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#D4A373] block mb-2">
+            MİMARİ & MÜHENDİSLİK ESERLERİ
+          </span>
+          <h1 class="text-3xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
+            Projeler Portfolyosu
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-2xl">
+            Sanayi yapıları, lojistik antrepolar, akaryakıt istasyonları ve çağdaş konut projelerinin asimetrik editoryal vitrini.
+          </p>
+        </div>
+
+        <!-- Kategori Filtre Butonları -->
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <button onclick="filterProjects('all', this)" class="proj-filter-btn px-4 py-2 rounded transition-colors bg-[#D4A373] text-black font-bold">
+            TÜMÜ
+          </button>
+          <button onclick="filterProjects('osb', this)" class="proj-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            ORGANİZE SANAYİ
+          </button>
+          <button onclick="filterProjects('akaryakit', this)" class="proj-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            AKARYAKIT & KANOPİ
+          </button>
+          <button onclick="filterProjects('sanayi', this)" class="proj-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            AĞIR SANAYİ / MASTER PLAN
+          </button>
+          <button onclick="filterProjects('konut', this)" class="proj-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            KONUT & VİLLA
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASİMETRİK PROJELER GRİDİ (Architecturechat Stili) -->
+  <section class="py-16 bg-[#0D1013]">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      <div id="projects-editorial-grid" class="projects-asymmetric-grid">
+        <!-- app.js / PROJECTS_DATA tarafından otomatik doldurulur -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ŞERİDİ -->
+  <section class="py-16 bg-[#12161C] border-t border-white/10 text-center">
+    <div class="max-w-4xl mx-auto px-6 space-y-4">
+      <h3 class="text-2xl font-heading font-bold text-white">Yeni Yatırımınız İçin Mimari Çözüm Ortağı</h3>
+      <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+        Organize Sanayi parseliniz veya akaryakıt istasyonu araziniz için keşif, statik proje ve anahtar teslim inşaat maliyeti çalışması talep edebilirsiniz.
+      </p>
+      <div class="pt-2 flex justify-center gap-4">
+        <a href="iletisim.html" class="btn-gold text-xs py-3 px-8 rounded font-semibold">Keşif & Teklif Formu &rarr;</a>
+        <a href="organize-sanayi.html" class="btn-minimal text-xs py-3 px-8 rounded font-semibold">OSB Standartlarını İncele</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-14 bg-[#090C0E] border-t border-white/10 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+        <!-- Logo & Hakkında -->
+        <div class="space-y-3">
+          <span class="font-heading font-bold text-white text-base">YURDANUR KÖSE</span>
+          <p class="text-slate-400 leading-relaxed text-[11px]">
+            Balıkesir ve çevre OSB'lerde ağır çelik fabrika binaları, lojistik antrepolar ve akaryakıt tesisleri taahhüt ortağı.
+          </p>
+          <div class="flex items-center gap-3 pt-2 text-slate-300">
+            <a href="https://www.instagram.com/yurdanurkosemimarlik/" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A373]"><i class="fa-brands fa-instagram text-base"></i></a>
+            <a href="https://www.facebook.com/yurdanurkosemimarlik" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A373]"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+            <a href="https://www.linkedin.com/in/yurdanur-k%C3%B6se-55a644241/" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4A373]"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+          </div>
+        </div>
+
+        <!-- Sayfalar -->
+        <div class="space-y-2">
+          <span class="font-mono text-white uppercase tracking-wider block mb-2">Sayfalar</span>
+          <a href="index.html" class="block hover:text-[#D4A373] transition-colors">Ana Sayfa</a>
+          <a href="kurumsal.html" class="block hover:text-[#D4A373] transition-colors">Kurumsal</a>
+          <a href="projeler.html" class="block hover:text-[#D4A373] transition-colors">Projeler Portfolyosu</a>
+          <a href="organize-sanayi.html" class="block hover:text-[#D4A373] transition-colors">Organize Sanayi & Akaryakıt</a>
+          <a href="galeri.html" class="block hover:text-[#D4A373] transition-colors">Şantiye Arşivi</a>
+          <a href="iletisim.html" class="block hover:text-[#D4A373] transition-colors">İletişim & Keşif</a>
+        </div>
+
+        <!-- İletişim -->
+        <div class="space-y-2">
+          <span class="font-mono text-white uppercase tracking-wider block mb-2">Merkez Ofis</span>
+          <p class="text-slate-300">Bandırma Caddesi No: 41/A, Karesi / Balıkesir</p>
+          <p><i class="fa-solid fa-phone text-[#D4A373] mr-1.5"></i> 0266 243 96 65</p>
+          <p><i class="fa-solid fa-envelope text-[#D4A373] mr-1.5"></i> info@yurdanurkose.com</p>
+          <p><i class="fa-solid fa-compass-drafting text-[#D4A373] mr-1.5"></i> proje@yurdanurkose.com</p>
+        </div>
+
+        <!-- Yasal & Mevzuat -->
+        <div class="space-y-2">
+          <span class="font-mono text-white uppercase tracking-wider block mb-2">Mevzuat Güvencesi</span>
+          <button onclick="openEpdkModal()" class="block text-left hover:text-white transition-colors">EPDK & İSG Güvencesi</button>
+          <button onclick="openPrivacyModal()" class="block text-left hover:text-white transition-colors">Gizlilik Politikası</button>
+          <button onclick="openKvkkModal()" class="block text-left hover:text-white transition-colors">KVKK Aydınlatma Metni</button>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <span>Yurdanur Köse Mimarlık İnşaat ve Ticaret Ltd. Şti. &copy; 2026. Tüm hakları saklıdır.</span>
+        <span>Balıkesir Ticaret Sicil No: 18452</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Modal Pencereleri -->
+  <div id="project-detail-modal" class="modal-backdrop">
+    <div id="project-modal-content" class="modal-panel"></div>
+  </div>
+
+  <div id="photo-lightbox" class="lightbox-backdrop" onclick="closePhotoLightbox()">
+    <div class="relative max-w-5xl max-h-[90vh] p-4 flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closePhotoLightbox()" class="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-black/80 border border-white/20 text-white flex items-center justify-center hover:bg-white/20">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Yurdanur Köse Mimarlık" class="max-h-[80vh] w-auto rounded shadow-2xl object-contain">
+      <p id="lightbox-caption" class="text-xs font-mono text-slate-300 mt-3 text-center"></p>
+    </div>
+  </div>
+
+  <!-- EPDK Modal -->
+  <div id="epdk-modal" class="modal-backdrop">
+    <div class="modal-panel max-w-4xl p-6 sm:p-10">
+      <div class="flex justify-between items-center pb-5 border-b border-white/10">
+        <div>
+          <span class="text-xs font-mono text-[#D4A373] uppercase tracking-wider block">Resmi Mevzuat Uyumluluğu</span>
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+            <span>EPDK & İSG Standartları ve Teknik Güvence Şartnamesi</span>
+          </h3>
+        </div>
+        <button onclick="closeEpdkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      <div class="py-6 space-y-6 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto pr-2">
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">1. 5015 Sayılı Petrol Piyasası Kanunu ve EPDK Standartları</h4>
+          <p class="text-slate-300">İnşa edilen tüm akaryakıt tesisleri EPDK Petrol Piyasası Lisans Yönetmeliği ve TSE 12820 kriterlerine %100 uyumludur.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">2. TSE 12820 Emniyet Mesafeleri</h4>
+          <p class="text-slate-300">Yeraltı tankları, dispenser adaları ve nefeslik borularında zorunlu asgari emniyet mesafeleri milimetrik olarak uygulanır.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">3. ATEX & Ex-Proof Direktifleri</h4>
+          <p class="text-slate-300">Zone 0, Zone 1 ve Zone 2 tehlikeli bölgelerde yalnızca ATEX sertifikalı elektrik ekipmanları kullanılır.</p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/10 rounded-lg p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sm text-white">4. 6331 Sayılı İSG Kanunu Şantiye Disiplini</h4>
+          <p class="text-slate-300">Şantiyelerimizde sıfır kaza toleransı ve A sınıfı İSG uzmanı denetimi esastır.</p>
+        </div>
+      </div>
+      <div class="pt-5 border-t border-white/10 text-right">
+        <button onclick="closeEpdkModal()" class="btn-minimal text-xs py-2 px-6 rounded">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gizlilik Modal -->
+  <div id="privacy-modal" class="modal-backdrop">
+    <div class="modal-panel max-w-4xl p-6 sm:p-10">
+      <div class="flex justify-between items-center pb-5 border-b border-white/10">
+        <h3 class="text-xl font-heading font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-lock text-cyan-400"></i>
+          <span>Gizlilik Politikası</span>
+        </h3>
+        <button onclick="closePrivacyModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      <div class="py-6 space-y-4 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto">
+        <p>Yurdanur Köse Mimarlık İnşaat ve Tic. Ltd. Şti. olarak müşterilerimizin gizlilik haklarına azami özen gösteriyoruz.</p>
+        <p>Keşif formları üzerinden toplanan veriler yalnızca teknik analiz ve teklif hazırlığı için kullanılır, üçüncü şahıslara aktarılmaz.</p>
+      </div>
+      <div class="pt-5 border-t border-white/10 text-right">
+        <button onclick="closePrivacyModal()" class="btn-minimal text-xs py-2 px-6 rounded">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- KVKK Modal -->
+  <div id="kvkk-modal" class="modal-backdrop">
+    <div class="modal-panel max-w-4xl p-6 sm:p-10">
+      <div class="flex justify-between items-center pb-5 border-b border-white/10">
+        <h3 class="text-xl font-heading font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-file-shield text-emerald-400"></i>
+          <span>KVKK Aydınlatma Metni</span>
+        </h3>
+        <button onclick="closeKvkkModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      <div class="py-6 space-y-4 text-xs text-slate-300 leading-relaxed max-h-[65vh] overflow-y-auto">
+        <p>6698 sayılı Kanun uyarınca veri sorumlusu Yurdanur Köse Mimarlık İnşaat ve Ticaret Limited Şirketi'dir.</p>
+        <p>İletişim bilgileriniz mimari sözleşmelerin kurulması ve ifası hukuki sebebine dayalı olarak güvenle işlenir.</p>
+      </div>
+      <div class="pt-5 border-t border-white/10 text-right">
+        <button onclick="closeKvkkModal()" class="btn-minimal text-xs py-2 px-6 rounded">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

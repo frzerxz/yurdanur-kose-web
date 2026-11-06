@@ -1,12 +1,11 @@
-// Yurdanur Köse Mimarlık & İnşaat - 3D Editoryal Web Portalı
+// Yurdanur Köse Mimarlık & İnşaat - Çok Sayfalı (Multi-Page) Mimari Web Portalı
 
-// 0. SAYFA HER YENİLENDİĞİNDE (F5 / RELOAD) KESİNLİKLE EN BAŞA SAR
+// 0. SAYFA HER YENİLENDİĞİNDE EN BAŞA AL (Scroll Restoration)
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 window.scrollTo(0, 0);
 
-// Eğer URL'de önceden kalmış bir # hash varsa (#teklif-formu vb.), temizle ve en tepeye odakla
 if (window.location.hash) {
   history.replaceState(null, null, window.location.pathname + window.location.search);
   window.scrollTo(0, 0);
@@ -21,12 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initThreeJsHero();
   initEditorialProjects();
   initFlowStream();
+  initStaticGallery();
   initWhiteForm();
   initHeaderScroll();
   initMobileMenu();
+  markActiveNavLink();
 });
 
-// 1. THREE.JS 3D MİMARİ TEL KAFES & ŞANTİYE IŞIK PARÇACIKLARI
+// 1. THREE.JS 3D MİMARİ TEL KAFES (Hero Bölümü - index.html)
 function initThreeJsHero() {
   const container = document.getElementById("hero-3d-canvas-container");
   const canvas = document.getElementById("hero-3d-canvas");
@@ -150,9 +151,13 @@ function initThreeJsHero() {
 }
 
 // 2. EDİTORYAL ASİMETRİK PROJELER GALERİSİ (architecturechat.com Stili)
-function initEditorialProjects() {
+function initEditorialProjects(filterCategory = 'all') {
   const container = document.getElementById("projects-editorial-grid");
   if (!container || typeof PROJECTS_DATA === "undefined") return;
+
+  const filtered = (filterCategory === 'all') 
+    ? PROJECTS_DATA 
+    : PROJECTS_DATA.filter(p => p.category === filterCategory);
 
   const spans = [
     { span: "span-wide", height: "h-[480px] lg:h-[560px]" },
@@ -168,7 +173,16 @@ function initEditorialProjects() {
 
   container.innerHTML = "";
 
-  PROJECTS_DATA.forEach((proj, idx) => {
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-12 py-16 text-center text-slate-400 font-mono text-sm">
+        Bu kategoride şu anda listelenen proje bulunmamaktadır.
+      </div>
+    `;
+    return;
+  }
+
+  filtered.forEach((proj, idx) => {
     const layout = spans[idx % spans.length];
     const item = document.createElement("div");
     item.className = `project-item ${layout.span} group`;
@@ -204,6 +218,19 @@ function initEditorialProjects() {
     container.appendChild(item);
   });
 }
+
+function filterProjects(cat, btnEl) {
+  document.querySelectorAll(".proj-filter-btn").forEach(b => {
+    b.classList.remove("bg-[#D4A373]", "text-black", "font-bold");
+    b.classList.add("bg-white/5", "text-slate-300");
+  });
+  if (btnEl) {
+    btnEl.classList.remove("bg-white/5", "text-slate-300");
+    btnEl.classList.add("bg-[#D4A373]", "text-black", "font-bold");
+  }
+  initEditorialProjects(cat);
+}
+window.filterProjects = filterProjects;
 
 // 3. WILSON / FRAMERPANDA PROJE DETAY MODALI
 function openProjectModal(projectId) {
@@ -278,13 +305,13 @@ function openProjectModal(projectId) {
 
           <div class="p-4 rounded bg-white/[0.03] border-l-2 border-[#D4A373] text-xs text-slate-300 leading-relaxed font-sans">
             <span class="font-mono text-[#D4A373] uppercase tracking-wider block mb-1">
-              <i class="fa-solid fa-clipboard-check mr-1"></i> Proje Açıklaması:
+              Proje Kapsamı & Açıklama
             </span>
-            "${proj.verifiedCaption}"
+            ${proj.verifiedCaption}
           </div>
 
           <div class="pt-3">
-            <a href="#teklif-formu" onclick="closeProjectModal()" class="btn-gold text-xs font-bold py-2.5 px-6 rounded">
+            <a href="iletisim.html" onclick="closeProjectModal()" class="btn-gold text-xs font-bold py-2.5 px-6 rounded">
               <i class="fa-solid fa-calculator mr-1"></i> Bu Projeye Benzer Keşif İste
             </a>
           </div>
@@ -308,6 +335,7 @@ function openProjectModal(projectId) {
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
 }
+window.openProjectModal = openProjectModal;
 
 function closeProjectModal() {
   const modal = document.getElementById("project-detail-modal");
@@ -316,8 +344,9 @@ function closeProjectModal() {
     document.body.style.overflow = "";
   }
 }
+window.closeProjectModal = closeProjectModal;
 
-// 4. KESİNTİSİZ AKAN 3D FOTOĞRAF ŞERİDİ ("Görseller Aksın" - Temiz, Yazısız Tasarım)
+// 4. KESİNTİSİZ AKAN 3D FOTOĞRAF ŞERİDİ ("Görseller Aksın")
 function initFlowStream() {
   const trackLeft = document.getElementById("marquee-track-left");
   const trackRight = document.getElementById("marquee-track-right");
@@ -327,7 +356,6 @@ function initFlowStream() {
   const leftList = FLOW_STREAM_PHOTOS.slice(0, half);
   const rightList = FLOW_STREAM_PHOTOS.slice(half);
 
-  // Kartların üzerinde "Büyütmek için tıkla" gibi ekstra yönlendirme yazısı YOKTUR (Kullanıcı Talebi)
   function renderCards(list) {
     return list.map(item => `
       <div class="marquee-card" onclick="openPhotoLightbox('${item.src}', '${item.title}')">
@@ -343,7 +371,22 @@ function initFlowStream() {
   trackRight.innerHTML = renderCards(rightList) + renderCards(rightList);
 }
 
-// 5. TAM EKRAN LIGHTBOX
+// 5. STATİK TAM GALERİ (galeri.html)
+function initStaticGallery() {
+  const grid = document.getElementById("static-gallery-grid");
+  if (!grid || typeof FLOW_STREAM_PHOTOS === "undefined") return;
+
+  grid.innerHTML = FLOW_STREAM_PHOTOS.map((item, idx) => `
+    <div class="h-64 sm:h-72 rounded overflow-hidden bg-slate-900 relative group cursor-pointer border border-white/5 hover:border-[#D4A373]/50 transition-all" onclick="openPhotoLightbox('${item.src}', '${item.title}')">
+      <img src="${item.src}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+        <span class="text-xs font-heading font-semibold text-white drop-shadow">${item.title}</span>
+      </div>
+    </div>
+  `).join("");
+}
+
+// 6. TAM EKRAN LIGHTBOX
 function openPhotoLightbox(src, title) {
   const lb = document.getElementById("photo-lightbox");
   const img = document.getElementById("lightbox-img");
@@ -356,6 +399,7 @@ function openPhotoLightbox(src, title) {
   lb.classList.add("active");
   document.body.style.overflow = "hidden";
 }
+window.openPhotoLightbox = openPhotoLightbox;
 
 function closePhotoLightbox() {
   const lb = document.getElementById("photo-lightbox");
@@ -364,36 +408,46 @@ function closePhotoLightbox() {
     document.body.style.overflow = "";
   }
 }
+window.closePhotoLightbox = closePhotoLightbox;
 
-// 6. YASAL & STANDART MODALLARI (EPDK, GİZLİLİK, KVKK)
+// 7. YASAL & STANDART MODALLARI (EPDK, GİZLİLİK, KVKK)
 function openEpdkModal() {
   const m = document.getElementById("epdk-modal");
   if (m) { m.classList.add("active"); document.body.style.overflow = "hidden"; }
 }
+window.openEpdkModal = openEpdkModal;
+
 function closeEpdkModal() {
   const m = document.getElementById("epdk-modal");
   if (m) { m.classList.remove("active"); document.body.style.overflow = ""; }
 }
+window.closeEpdkModal = closeEpdkModal;
 
 function openPrivacyModal() {
   const m = document.getElementById("privacy-modal");
   if (m) { m.classList.add("active"); document.body.style.overflow = "hidden"; }
 }
+window.openPrivacyModal = openPrivacyModal;
+
 function closePrivacyModal() {
   const m = document.getElementById("privacy-modal");
   if (m) { m.classList.remove("active"); document.body.style.overflow = ""; }
 }
+window.closePrivacyModal = closePrivacyModal;
 
 function openKvkkModal() {
   const m = document.getElementById("kvkk-modal");
   if (m) { m.classList.add("active"); document.body.style.overflow = "hidden"; }
 }
+window.openKvkkModal = openKvkkModal;
+
 function closeKvkkModal() {
   const m = document.getElementById("kvkk-modal");
   if (m) { m.classList.remove("active"); document.body.style.overflow = ""; }
 }
+window.closeKvkkModal = closeKvkkModal;
 
-// 7. TEMİZ BEYAZ TEKLİF FORMU & WHATSAPP ENTEGRASYONU
+// 8. TEMİZ BEYAZ TEKLİF FORMU & WHATSAPP ENTEGRASYONU
 function initWhiteForm() {
   const form = document.getElementById("clean-proposal-form");
   if (!form) return;
@@ -434,8 +488,9 @@ function closeSuccessModal() {
     modalSuccess.classList.remove("active");
   }
 }
+window.closeSuccessModal = closeSuccessModal;
 
-// 8. HEADER SCROLL & MOBİL MENÜ
+// 9. HEADER SCROLL, MOBİL MENÜ & AKTİF LİNK VURGUSU
 function initHeaderScroll() {
   const header = document.querySelector(".site-header");
   if (!header) return;
@@ -457,16 +512,23 @@ function initMobileMenu() {
   btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
   });
+}
 
-  const links = menu.querySelectorAll("a");
-  links.forEach(l => {
-    l.addEventListener("click", () => {
-      menu.classList.add("hidden");
-    });
+function markActiveNavLink() {
+  let path = window.location.pathname.split('/').pop() || 'index.html';
+  if (path === '') path = 'index.html';
+
+  document.querySelectorAll('.site-nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === path) {
+      link.classList.add('nav-link-active');
+    } else {
+      link.classList.remove('nav-link-active');
+    }
   });
 }
 
-// Global modal kapatma (Esc veya backdrop tıklaması)
+// Global modal kapatma (Esc)
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeProjectModal();

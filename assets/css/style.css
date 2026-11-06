@@ -134,7 +134,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 /* Editorial Asymmetric Projects Gallery (architecturechat.com style) */
-.editorial-gallery-grid {
+.editorial-gallery-grid,
+.projects-asymmetric-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 2.5rem 2rem;
@@ -407,4 +408,28 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .btn-gold:hover {
   background: #E5B382;
   box-shadow: 0 4px 20px rgba(212, 163, 115, 0.3);
+}
+
+/* Sub-page Hero Banner */
+.page-hero {
+  position: relative;
+  padding: 8.5rem 0 3.5rem;
+  background: radial-gradient(circle at 50% 0%, #1A222B 0%, #0D1013 75%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-link-active {
+  color: var(--accent-gold) !important;
+  font-weight: 700;
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-gold);
 }
