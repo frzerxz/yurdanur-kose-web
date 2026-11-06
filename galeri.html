@@ -100,55 +100,61 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
-      <span class="text-xs font-mono uppercase tracking-widest text-[#D4A373] block mb-2">
-        UYGULAMA VE İMALAT SÜREÇLERİ
-      </span>
-      <h1 class="text-3xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
-        Şantiye & İmalat Arşivi
-      </h1>
-      <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-2xl">
-        Ağır çelik konstrüksiyon montajları, temel kazıları, cephe kaplamaları ve akaryakıt tesislerimizin sahadaki gerçek imalat aşamaları.
-      </p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#D4A373] block mb-2">
+            UYGULAMA VE İMALAT SÜREÇLERİ
+          </span>
+          <h1 class="text-3xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
+            Şantiye & İmalat Arşivi
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-2xl">
+            Ağır çelik konstrüksiyon montajları, temel kazıları, cephe kaplamaları ve akaryakıt tesislerimizin sahadaki gerçek imalat aşamaları.
+          </p>
+        </div>
+
+        <!-- Kategori Filtre Butonları -->
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <button onclick="initStaticGallery('all', this)" class="gallery-filter-btn px-4 py-2 rounded transition-colors bg-[#D4A373] text-black font-bold">
+            TÜMÜ
+          </button>
+          <button onclick="initStaticGallery('osb', this)" class="gallery-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            ORGANİZE SANAYİ
+          </button>
+          <button onclick="initStaticGallery('celik', this)" class="gallery-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            ÇELİK & KANOPİ
+          </button>
+          <button onclick="initStaticGallery('saha', this)" class="gallery-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            ALTYAPI & SAHA
+          </button>
+          <button onclick="initStaticGallery('mimari', this)" class="gallery-filter-btn px-4 py-2 rounded transition-colors bg-white/5 text-slate-300 hover:text-white">
+            MİMARİ & KONUT
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- AKICI 3D ŞANTİYE ŞERİDİ (Marquee Stream) -->
-  <section class="py-12 bg-[#090C0E] border-b border-white/10 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 mb-6">
-      <span class="text-xs font-mono uppercase tracking-wider text-[#D4A373]">
-        Dinamik Akış &middot; Devam Eden ve Tamamlanan İmalatlar
-      </span>
-    </div>
-    
-    <div class="space-y-4">
-      <div class="overflow-hidden">
-        <div id="marquee-track-left" class="marquee-track">
-          <!-- JS tarafından doldurulur -->
-        </div>
-      </div>
-      <div class="overflow-hidden">
-        <div id="marquee-track-right" class="marquee-track-reverse">
-          <!-- JS tarafından doldurulur -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATİK MASONRY ARŞİVİ (Tüm Fotoğraflar) -->
+  <!-- MASONRY GALERİ GRİDİ (Filtrelenebilir Gerçek Şantiye Fotoğrafları) -->
   <section class="py-16 bg-[#0D1013]">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 space-y-8">
-      <div>
-        <span class="text-xs font-mono uppercase tracking-wider text-[#D4A373]">FOTOĞRAF KOLEKSİYONU</span>
-        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white mt-1">
-          Tüm Saha ve Mimari İmalat Görselleri
-        </h2>
-        <p class="text-xs text-slate-400 mt-2">
-          Görsellerin üzerine tıklayarak yüksek çözünürlüklü tam ekran modunda inceleyebilirsiniz.
-        </p>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-wider text-[#D4A373]">FOTOĞRAF KOLEKSİYONU</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white mt-1">
+            Saha ve Mimari İmalat Görselleri
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Görsellerin üzerine tıklayarak yüksek çözünürlüklü tam ekran modunda detayları inceleyebilirsiniz.
+          </p>
+        </div>
+        <span id="gallery-count-badge" class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#D4A373] self-start sm:self-auto shrink-0">
+          28 Fotoğraf
+        </span>
       </div>
 
-      <div id="static-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- app.js / initStaticGallery() tarafından tüm fotoğraflar yüklenir -->
+      <div id="static-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- app.js / initStaticGallery() tarafından dinamik olarak yüklenir -->
       </div>
     </div>
   </section>

@@ -372,19 +372,55 @@ function initFlowStream() {
 }
 
 // 5. STATİK TAM GALERİ (galeri.html)
-function initStaticGallery() {
+function initStaticGallery(filterCat = 'all', btnEl = null) {
   const grid = document.getElementById("static-gallery-grid");
   if (!grid || typeof FLOW_STREAM_PHOTOS === "undefined") return;
 
-  grid.innerHTML = FLOW_STREAM_PHOTOS.map((item, idx) => `
-    <div class="h-64 sm:h-72 rounded overflow-hidden bg-slate-900 relative group cursor-pointer border border-white/5 hover:border-[#D4A373]/50 transition-all" onclick="openPhotoLightbox('${item.src}', '${item.title}')">
+  if (btnEl) {
+    document.querySelectorAll(".gallery-filter-btn").forEach(b => {
+      b.classList.remove("bg-[#D4A373]", "text-black", "font-bold");
+      b.classList.add("bg-white/5", "text-slate-300");
+    });
+    btnEl.classList.remove("bg-white/5", "text-slate-300");
+    btnEl.classList.add("bg-[#D4A373]", "text-black", "font-bold");
+  }
+
+  const filtered = (filterCat === 'all')
+    ? FLOW_STREAM_PHOTOS
+    : FLOW_STREAM_PHOTOS.filter(item => item.category === filterCat);
+
+  const countBadge = document.getElementById("gallery-count-badge");
+  if (countBadge) {
+    countBadge.textContent = `${filtered.length} Fotoğraf`;
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="col-span-full py-16 text-center text-slate-400 font-mono text-sm">
+        Bu kategoride fotoğraf bulunmamaktadır.
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((item, idx) => `
+    <div class="h-64 sm:h-72 rounded-lg overflow-hidden bg-slate-900 relative group cursor-pointer border border-white/10 hover:border-[#D4A373]/60 shadow-lg hover:shadow-2xl transition-all duration-300" onclick="openPhotoLightbox('${item.src}', '${item.title}')">
       <img src="${item.src}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-        <span class="text-xs font-heading font-semibold text-white drop-shadow">${item.title}</span>
+      <div class="absolute top-3 left-3 px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider bg-black/75 backdrop-blur-md text-[#D4A373] border border-white/10">
+        ${item.categoryLabel || 'Saha & Mimari'}
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+        <div>
+          <span class="text-xs font-heading font-semibold text-white drop-shadow block leading-snug">${item.title}</span>
+          <span class="text-[10px] font-mono text-slate-300 mt-1 inline-flex items-center gap-1.5">
+            <i class="fa-solid fa-expand text-[#D4A373]"></i> Büyütmek için tıklayın
+          </span>
+        </div>
       </div>
     </div>
   `).join("");
 }
+window.initStaticGallery = initStaticGallery;
 
 // 6. TAM EKRAN LIGHTBOX
 function openPhotoLightbox(src, title) {
