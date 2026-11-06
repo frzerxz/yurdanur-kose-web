@@ -41,7 +41,7 @@ function initThreeJsHero() {
     0.1,
     1000
   );
-  camera.position.set(0, 4, 24);
+  camera.position.set(0, 2.5, 26);
 
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
@@ -59,8 +59,9 @@ function initThreeJsHero() {
   pointGold.position.set(8, 12, 12);
   scene.add(pointGold);
 
-  // 3D Çelik Taşıyıcı ve Kanopi Kafes Grubu
+  // 3D Çelik Taşıyıcı ve Kanopi Kafes Grubu (Alt Yarıda Konumlandırıldı)
   const structureGroup = new THREE.Group();
+  structureGroup.position.set(0, -5.2, 0);
   scene.add(structureGroup);
 
   // Ana Çelik Kirişler (Industrial Steel Truss)
@@ -87,7 +88,7 @@ function initThreeJsHero() {
 
   // Zemin Mimari Koordinat Izgarası
   const gridHelper = new THREE.GridHelper(36, 18, 0xD4A373, 0x2A3441);
-  gridHelper.position.y = -4.5;
+  gridHelper.position.y = -9.2;
   scene.add(gridHelper);
 
   // Şantiye Işık Partikülleri
